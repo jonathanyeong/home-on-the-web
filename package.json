@@ -1,5 +1,5 @@
 {
-	"name": "home-on-the-web-v2",
+	"name": "home-on-the-web",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
