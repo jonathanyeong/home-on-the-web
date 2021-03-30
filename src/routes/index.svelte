@@ -9,6 +9,7 @@
 
 	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 	<p>Visit <a href="/example-markdown">the /example-markdown page</a> to see some markdown rendered by mdsvex.</p>
+	<p>Visit <a href="/blog">The bloge</a> to see the blog posts.</p>
 </main>
 
 <style lang="scss">
