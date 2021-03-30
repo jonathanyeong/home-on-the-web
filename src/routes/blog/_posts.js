@@ -7,4 +7,13 @@ const posts =
             }
         ));
 
-export default posts;
+const slugRegex = /^([a-z-0-9]+)(?:\.md)$/;
+
+export default async function allPosts() {
+  let allPosts = await posts;
+  const slugs = Object.fromEntries(
+    allPosts.map((post) => [post.filename.match(slugRegex)[1], post])
+  );
+  return slugs
+}
+// export default posts;

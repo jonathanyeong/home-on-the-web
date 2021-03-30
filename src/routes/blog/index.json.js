@@ -1,7 +1,12 @@
-import posts from './_posts';
+import allPosts from './_posts';
 
 export async function get() {
+  const posts = await allPosts();
+
 	return {
-		body: await posts
+		body: Object.keys(posts).map(slug => ({
+			slug,
+			...posts[slug]
+		}))
 	};
 }
