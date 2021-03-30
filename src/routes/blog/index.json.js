@@ -1,10 +1,13 @@
 import posts from './_posts';
 
+posts.then((post) => {
+  console.log("In index.json", post);
+});
 export function get() {
 	return {
-		body: Object.keys(posts).map(slug => ({
-			slug,
-			...posts[slug]
-		}))
+		body: [{
+      slug: "posts/firstpost.md",
+      title: "stubbed from json"
+    }]
 	};
 }
