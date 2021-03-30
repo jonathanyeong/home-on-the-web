@@ -1,8 +1,10 @@
+import posts from './_posts';
+
 export function get() {
 	return {
-		body: [{
-      slug: "stubbed",
-      title: "stubbed from json"
-    }]
+		body: Object.keys(posts).map(slug => ({
+			slug,
+			...posts[slug]
+		}))
 	};
 }
