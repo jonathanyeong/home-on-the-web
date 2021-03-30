@@ -7,5 +7,4 @@ const posts =
             }
         ));
 
-console.log(`Posts are: ${posts}`);
 export default posts;
