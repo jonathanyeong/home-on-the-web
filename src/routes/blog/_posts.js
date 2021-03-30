@@ -16,4 +16,3 @@ export default async function allPosts() {
   );
   return slugs
 }
-// export default posts;
