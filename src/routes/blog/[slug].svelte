@@ -35,6 +35,7 @@
                 props: {
                     title: posts[slug].title,
                     description: posts[slug].description,
+                    pageUrl: page.path,
                     Rendered,
                 },
             };
@@ -50,13 +51,31 @@
 
 <script>
     export let Rendered;
+    export let title;
+    export let description;
+    export let pageUrl;
+    export let coverImage;
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+    <meta property="og:title" content="{title}"/>
+    <meta property="og:url" content="{pageUrl}" />
+    <meta property="og:description" content="{description}" />
 
-<div class="container mx-auto overflow-y-hidden px-3 md:pl-7">
+    {#if coverImage}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="{coverImage}" />
+        <meta property="twitter:image" content="{coverImage}" />
+    {/if}
+    <meta property="og:type" content="article" />
+</svelte:head>
+
+
+<div>
+    <h1>{title}</h1>
     {#key Rendered}
-        <article
-            class="prose prose-lg py-8">
+        <article>
             <Rendered />
         </article>
     {/key}
