@@ -1,15 +1,8 @@
-<script lang="ts">
-	import Counter from '$lib/Counter.svelte';
-</script>
-
 <main>
-	<h1>Hello world!</h1>
-
-	<Counter />
-
-	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
-	<p>Visit <a href="/example-markdown">the /example-markdown page</a> to see some markdown rendered by mdsvex.</p>
-	<p>Visit <a href="/blog">The bloge</a> to see the blog posts.</p>
+	<h1>Welcome to my site!</h1>
+	<p>We'll have Special homepage header here</p>
+	<h2>Featured Posts</h2>
+	<p>We'll show a list of featured posts here</p>
 </main>
 
 <style lang="scss">
