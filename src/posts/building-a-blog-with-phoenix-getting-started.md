@@ -75,7 +75,7 @@ And navigate to `localhost:4000/posts` you will get an error. Let's fix this.
 
 All of these routes point to a nonexistent Post Controller. Lets create one and add the following code.
 
-```
+```elixir
   # lib/phoenix_blog_web/controllers/post_controller.ex
   defmodule PhoenixBlogWeb.PostController do
     use PhoenixBlogWeb, :controller
