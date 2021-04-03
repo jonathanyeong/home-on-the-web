@@ -5,5 +5,9 @@
 	<p>We'll show a list of featured posts here</p>
 </main>
 
+<svelte:head>
+	<title>Jonathan Yeong's Site</title>
+</svelte:head>
+
 <style lang="scss">
 </style>
