@@ -10,7 +10,7 @@
      */
     export async function load({ page, fetch, session, context }) {
         const { slug } = page.params;
-        console.log("slug is", slug);
+
         /**
          * @type { { title: string, description: string, filename: string }[] }
          */
@@ -28,9 +28,9 @@
                     )
                 )
             );
-
-            const { default: Rendered } = await pages[slug]();
-
+            const stuff = await pages[slug]();
+            const { default: Rendered } = stuff;
+            console.log(stuff);
             return {
                 props: {
                     title: posts[slug].title,

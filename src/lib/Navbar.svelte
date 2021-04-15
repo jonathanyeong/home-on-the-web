@@ -1,5 +1,6 @@
 <nav>
   <a href="/">Home</a>
-  <a href="/blog">Blog</a>
+  <a href="/garden">Digital Garden</a>
+  <a href="/blog">Tutorials</a>
   <a href="/about">About</a>
 </nav>

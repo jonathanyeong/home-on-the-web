@@ -23,12 +23,6 @@ pre {
 }
 
 @font-face {
-	font-family: 'BlackDiamond';
-	src: url('/fonts/BlackDiamond/font.woff2') format('woff2'), url('/fonts/BlackDiamond/font.woff') format('woff');
-	font-display: fallback;
-}
-
-@font-face {
 	font-family: 'AvenirLTPro-Medium';
 	src: url('/fonts/AvenirLTPro-Medium/font.woff2') format('woff2'), url('/fonts/AvenirLTPro-Medium/font.woff') format('woff');
 	font-display: fallback;
