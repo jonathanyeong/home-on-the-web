@@ -1,5 +1,3 @@
-import allPosts from './tutorial/_posts.jss.js'
-
 const siteUrl = 'https://jonathanyeong.com';
 
 const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
@@ -26,17 +24,22 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 </channel>
 </rss>`;
 
+import plants from './garden/_plants'
+import tutorials from './tutorials/_tutorials'
+
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
 export async function get() {
-  let posts = await allPosts()
+  const allPlants = await plants();
+  const allTutorials = await tutorials();
+  const allContent = {...allPlants, ...allTutorials}
 
-  posts = Object.keys(posts).map((slug) => {
+  const posts = Object.keys(allContent).map((slug) => {
     return {
-        title: posts[slug].title,
-        date: posts[slug].date,
-        description: posts[slug].description,
+        title: allContent[slug].title,
+        date: allContent[slug].date,
+        description: allContent[slug].description,
         slug: slug,
       };
   })
