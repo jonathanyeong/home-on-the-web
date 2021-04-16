@@ -1,7 +1,7 @@
 <script context="module">
   export const prerender = true;
 	export async function load({ fetch }) {
-		const res = await fetch('/blog.json');
+		const res = await fetch('/tutorials.json');
 		return {
 			props: {
 				posts: await res.json()
@@ -18,6 +18,6 @@
 <p>I should display a list of posts</p>
 <ul>
 	{#each posts as post}
-		<li><a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a></li>
+		<li><a sveltekit:prefetch href="/tutorials/{post.slug}">{post.title}</a></li>
 	{/each}
 </ul>

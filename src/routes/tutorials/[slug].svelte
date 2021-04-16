@@ -1,6 +1,5 @@
 <script context="module">
-    import allPosts from './_posts';
-
+    import tutorials from './_tutorials';
     export const prerender = true;
 
     const slugRegex = /^([a-z-0-9]+)(?:\.md)$/;
@@ -10,33 +9,16 @@
      */
     export async function load({ page, fetch, session, context }) {
         const { slug } = page.params;
+        const allTutorials = await tutorials();
+        const tutorial = allTutorials[slug]
 
-        /**
-         * @type { { title: string, description: string, filename: string }[] }
-         */
-        const posts = await allPosts();
-
-        if (slug in posts) {
-            const pages = Object.fromEntries(
-                await Promise.all(
-                    Object.entries(import.meta.glob('/src/posts/*.md')).map(
-                        async ([path, page]) => {
-                            const filename = path.split('/').pop();
-                            const slug = filename.match(slugRegex)[1];
-                            return [slug, page];
-                        }
-                    )
-                )
-            );
-            const stuff = await pages[slug]();
-            const { default: Rendered } = stuff;
-            console.log(stuff);
+        if (tutorial) {
             return {
                 props: {
-                    title: posts[slug].title,
-                    description: posts[slug].description,
-                    pageUrl: page.path,
-                    Rendered,
+                title: tutorial.title,
+                description: tutorial.description,
+                pageUrl: page.path,
+                rendered: tutorial.rendered,
                 },
             };
         } else {
@@ -50,7 +32,7 @@
 </script>
 
 <script>
-    export let Rendered;
+    export let rendered;
     export let title;
     export let description;
     export let pageUrl;
@@ -74,9 +56,9 @@
 
 <div>
     <h1>{title}</h1>
-    {#key Rendered}
+    {#key rendered}
         <article>
-            <Rendered />
+          <svelte:component this={rendered} />
         </article>
     {/key}
 </div>

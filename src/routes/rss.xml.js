@@ -1,4 +1,4 @@
-import allPosts from './blog/_posts.js'
+import allPosts from './tutorial/_posts.jss.js'
 
 const siteUrl = 'https://jonathanyeong.com';
 
