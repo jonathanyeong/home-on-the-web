@@ -34,15 +34,26 @@
   export let rendered;
   export let title;
   export let description;
-  export let pageUrl;
+  export let pageUrl; // TODO: This might not return the full URL
+
+  let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${pageUrl}`)
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+  <meta property="og:title" content="{title}"/>
+  <meta property="og:url" content="{pageUrl}" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="{pageUrl}" />
+</svelte:head>
 
 <div>
-    <h1>{title}</h1>
-    {#key rendered}
-        <article>
-          <svelte:component this={rendered} />
-        </article>
-    {/key}
+  <h1>{title}</h1>
+  {#key rendered}
+      <article>
+        <svelte:component this={rendered} />
+      </article>
+  {/key}
+  <p>Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}">Twitter</a></p>
 </div>
