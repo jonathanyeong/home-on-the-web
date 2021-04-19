@@ -55,5 +55,5 @@
         <svelte:component this={rendered} />
       </article>
   {/key}
-  <p>Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}">Twitter</a></p>
+  <p>Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}" data-dnt="true">Twitter</a></p>
 </div>

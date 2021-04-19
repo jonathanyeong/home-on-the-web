@@ -9,10 +9,16 @@ tags:
   - evergreen
 ---
 
+<script>
+  import Youtube from '$lib/Youtube.svelte';
+  import Tweet from '$lib/Tweet.svelte';
+</script>
+
 # Markdown: Syntax
 
 - [Markdown: Syntax](#markdown-syntax)
   - [Overview](#overview)
+    - [Embeds](#embeds)
     - [Philosophy](#philosophy)
   - [Block Elements](#block-elements)
     - [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
@@ -32,6 +38,10 @@ can [see the source for it by adding '.text' to the URL](/projects/markdown/synt
 ----
 
 ## Overview
+
+### Embeds
+<Youtube youtubeId="hC27LIoFrcc" />
+<Tweet tweetId="1384205247501856770" />
 
 ### Philosophy
 
@@ -313,3 +323,4 @@ Unlike a pre-formatted code block, a code span indicates code within a
 normal paragraph. For example:
 
 Use the `printf()` function.
+
