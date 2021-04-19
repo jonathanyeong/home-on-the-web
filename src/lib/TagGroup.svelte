@@ -4,14 +4,16 @@
 
 	const dispatch = createEventDispatcher();
   let activeTags = []
+  let handleSelect = [];
 
-  function toggleTagToFilter(tag) {
+  function toggleTagToFilter(tag, index) {
     const posOfTag = activeTags.indexOf(tag);
-
     if (posOfTag >= 0) {
       activeTags.splice(posOfTag, 1)
+      handleSelect[index] = false
     } else {
       activeTags = [...activeTags, tag]
+      handleSelect[index] = true
     }
 
     dispatch('tagUpdate', {
@@ -20,8 +22,15 @@
   }
 </script>
 
+<style>
+  button.selected {
+    background-color: pink;
+    color: white;
+  }
+</style>
+
 <ul>
-	{#each tags as tag}
-		<li><button on:click|preventDefault={() => toggleTagToFilter(tag)}>{tag}</button></li>
+	{#each tags as tag, index}
+		<li><button class:selected="{handleSelect[index]}"  on:click|preventDefault={() => toggleTagToFilter(tag, index)}>{tag}</button></li>
 	{/each}
 </ul>
