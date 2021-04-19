@@ -22,7 +22,11 @@
 	$: postList = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
 
 	function handleTagUpdate(event) {
-		activeTags = event.detail.activeTags;
+		if (event.detail.activeTags.length === 0) {
+			activeTags = tags;
+		} else {
+			activeTags = event.detail.activeTags;
+		}
 	}
 </script>
 

@@ -6,8 +6,14 @@
   let activeTags = []
 
   function toggleTagToFilter(tag) {
-    activeTags = [...activeTags, tag]
-    // alert(`Active tags are ${activeTags}`)
+    const posOfTag = activeTags.indexOf(tag);
+
+    if (posOfTag >= 0) {
+      activeTags.splice(posOfTag, 1)
+    } else {
+      activeTags = [...activeTags, tag]
+    }
+
     dispatch('tagUpdate', {
       activeTags: activeTags
     });
