@@ -1,11 +1,3 @@
-:root {
-	font-family: 'AvenirLTPro-Book',
-	system-ui,
-	-apple-system,
-	BlinkMacSystemFont,
-	sans-serif;
-}
-
 pre {
 	border-radius: 5px;
 }
@@ -26,4 +18,76 @@ pre {
 	font-family: 'AvenirLTPro-Medium';
 	src: url('/fonts/AvenirLTPro-Medium/font.woff2') format('woff2'), url('/fonts/AvenirLTPro-Medium/font.woff') format('woff');
 	font-display: fallback;
+}
+
+html {
+	font-size: 18px;
+}
+
+body {
+	font-family: var(--font-family-light);
+}
+
+:root {
+	// Colours
+	--primary-400: #16697A;
+	--secondary-400: #59C3C3;
+	--gray-400: #9CA3AF;
+	--gray-700: #374151;
+	--fiery-rose: #FC6471;
+	--heliotrope-gray: #AEA4BF;
+	--wheat: #EFEADD;
+	--white-50: #FEFEFE;
+	// Font sizes
+	--big-header: 4.209rem;
+	--heading-one: 3.157rem;
+	--heading-two: 2.369rem;
+	--heading-three: 1.777rem;
+	--heading-four: 1.333rem;
+	--small-text: 0.75rem;
+	--body-text: 1rem;
+	// Font families
+	--font-family-heavy: 'AvenirLTPro-Heavy', sans-serif, system-ui;
+	--font-family-medium: 'AvenirLTPro-Medium', sans-serif, system-ui;
+	--font-family-light: 'AvenirLTPro-Book', sans-serif, system-ui;
+}
+
+.title {
+	font-family: var(--font-family-heavy);
+	font-size: var(--big-header);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--gray-700);
+	font-weight: normal;
+	margin: 0 0 1.38rem;
+}
+
+p {
+	color: var(--gray-700);
+	margin-bottom: 1rem;
+	line-height: 1.75;
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+	font-family: var(--font-family-medium);
+}
+
+.h1 {
+	font-size: var(--heading-one);
+}
+.h2 {
+	font-size: var(--heading-two);
+}
+.h3 {
+	font-size: var(--heading-three);
+}
+.h4 {
+	font-size: var(--heading-four);
 }

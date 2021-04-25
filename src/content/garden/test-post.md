@@ -39,6 +39,12 @@ can [see the source for it by adding '.text' to the URL](/projects/markdown/synt
 
 ## Overview
 
+This plugin works on MDAST, a Markdown AST
+implemented by [remark](https://github.com/remarkjs/remark)
+
+*[MDAST]: Markdown Abstract Syntax Tree.
+*[AST]: Abstract syntax tree
+
 ### Embeds
 <Youtube youtubeId="hC27LIoFrcc" />
 <Tweet tweetId="1384205247501856770" />
