@@ -22,9 +22,12 @@ pre {
 
 html {
 	font-size: 18px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
+	background-color: var(--white-50);
 	font-family: var(--font-family-light);
 }
 
@@ -50,6 +53,8 @@ body {
 	--font-family-heavy: 'AvenirLTPro-Heavy', sans-serif, system-ui;
 	--font-family-medium: 'AvenirLTPro-Medium', sans-serif, system-ui;
 	--font-family-light: 'AvenirLTPro-Book', sans-serif, system-ui;
+	// Widths
+	--twelve-column-width: 55rem;
 }
 
 .title {
