@@ -1,6 +1,7 @@
 ---
 date: 2021-01-21T00:00:00.000-08:00
 title: A guide to the Javascript tools ecosystem
+seoTitle: A guide to the JS tools ecosystem, Snowpack, Vite, etc.
 published: true
 cover_image: https://res.cloudinary.com/jonathan-yeong/image/upload/v1611244940/personal-blog/cover_images/a-guide-to-js-tooling-ecosystem_dlbaid.png
 description: This post is a guide to the Javascript tool ecosystem. I look at the
