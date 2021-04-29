@@ -37,9 +37,13 @@
     a {
       color: var(--gray-700);
       font-family: var(--font-family-medium);
-      margin-right: 2rem;
+      margin-right: 0.2rem;
       padding: 5px;
       text-decoration: none;
+
+      @media (min-width: 768px) {
+        margin-right: 2rem;
+      }
     }
 
     .active {

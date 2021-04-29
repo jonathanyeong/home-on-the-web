@@ -1,3 +1,23 @@
+<script context="module">
+  export const prerender = true;
+	export async function load({ fetch }) {
+		const res = await fetch('/garden.json');
+		const {posts} = await res.json();
+		return {
+			props: {
+				posts: posts,
+			}
+		};
+	}
+</script>
+
+<script>
+	export let posts;
+
+	let postList =  posts.slice(0,8)
+
+</script>
+
 <svelte:head>
 	<title>Jonathan Yeong's Site</title>
 </svelte:head>
@@ -11,6 +31,16 @@
 
 <main>
 	<h2 class="h3">The Digital Garden</h2>
+	<div class="garden-posts">
+		{#each postList as post}
+			<article class="garden-post">
+				<div class="garden-post-inner">
+					<a sveltekit:prefetch href="/garden/{post.slug}">{post.title}</a>
+				</div>
+			</article>
+		{/each}
+	</div>
+
 	<a href="/garden">More from the garden</a>
 </main>
 
@@ -28,4 +58,30 @@
 			text-decoration: none;
 		}
 	}
+	.garden-posts {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+		grid-auto-flow: column;
+	  grid-gap: 1rem;
+	}
+	.garden-post {
+		border-radius: 5px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		position: relative;
+		background-color: var(--secondary-400);
+		height: 100%;
+	}
+
+	.garden-post-inner {
+		background: var(--white);
+		border-radius: 5px;
+		display: block;
+		position: relative;
+		height: 100%;
+	}
+
+	.garden-post:hover .garden-post-inner {
+		transform: translate(-10px, -10px);
+	}
+
 </style>
