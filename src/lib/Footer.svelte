@@ -16,7 +16,7 @@
 
 <style lang="scss">
   footer {
-    // height: 149px;
+    margin-top: 88px;
     display: flex;
     flex-direction: column;
     background-color: var(--wheat);
