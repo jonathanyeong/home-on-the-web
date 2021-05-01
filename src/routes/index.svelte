@@ -64,6 +64,28 @@
 
 	.header-links {
 		font-family: var(--font-family-heavy);
+		position: relative;
+		display: inline-block;
+
+		&:before {
+			content:'';
+			position: absolute;
+			width: 16px;
+			height: 6px;
+			bottom: 5px;
+		}
+	}
+
+	.yt-link {
+		&:before {
+			background: var(--fiery-rose);
+		}
+	}
+
+	.twitter-link {
+		&:before {
+			background: var(--heliotrope-gray);
+		}
 	}
 	.garden-posts {
 		display: grid;
