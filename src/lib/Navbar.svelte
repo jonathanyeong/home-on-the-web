@@ -27,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 8px;
   }
 
   .nav-links {

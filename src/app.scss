@@ -29,6 +29,7 @@ html {
 body {
 	background-color: var(--white-50);
 	font-family: var(--font-family-light);
+	margin: 0;
 }
 
 :root {
@@ -48,7 +49,7 @@ body {
 	--heading-two: 2.369rem;
 	--heading-three: 1.777rem;
 	--heading-four: 1.333rem;
-	--small-text: 0.75rem;
+	--small-text: 0.78rem;
 	--body-text: 1rem;
 	// Font families
 	--font-family-heavy: 'AvenirLTPro-Heavy', sans-serif, system-ui;
