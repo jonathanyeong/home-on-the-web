@@ -39,7 +39,7 @@
       color: var(--gray-700);
       font-family: var(--font-family-medium);
       margin-right: 0.2rem;
-      padding: 5px;
+      display: inline-block;
       text-decoration: none;
 
       @media (min-width: 768px) {
@@ -49,7 +49,15 @@
 
     .active {
       font-family: var(--font-family-heavy);
-      border-bottom: 2px solid var(--secondary-400);
+      position: relative;
+      &:before {
+        content: '';
+        background: var(--secondary-400);
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: -4px;
+      }
     }
   }
 </style>
