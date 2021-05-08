@@ -21,7 +21,7 @@
     flex-direction: column;
     background-color: var(--wheat);
     justify-content: flex-end;
-    padding: 40px 0 30px;
+    padding: 40px 0 20px;
   }
   span {
     color: var(--secondary-400);
@@ -30,7 +30,7 @@
   p {
     color: var(--gray-700);
     text-align: center;
-    margin: 0;
+    margin: 0 0 8px;
   }
 
   :global(.footer-icon) {
@@ -38,6 +38,7 @@
   }
 
   a {
+    display: inline-block;
     margin-right: 16px;
   }
   a:last-child {
