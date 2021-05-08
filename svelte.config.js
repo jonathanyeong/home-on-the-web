@@ -1,11 +1,10 @@
-const { mdsvex } = require("mdsvex");
-const mdsvexConfig = require("./mdsvex.config.cjs");
-const sveltePreprocess = require('svelte-preprocess');
-const netlify = require('@sveltejs/adapter-netlify');
-const pkg = require('./package.json');
+import { mdsvex } from "mdsvex";
+import mdsvexConfig from "./mdsvex.config.js";
+import sveltePreprocess from 'svelte-preprocess'
+import netlify from '@sveltejs/adapter-netlify';
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
+const config = {
 	extensions: [".svelte", ...mdsvexConfig.extensions],
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
@@ -18,11 +17,7 @@ module.exports = {
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-
-		vite: {
-			ssr: {
-				noExternal: Object.keys(pkg.dependencies || {})
-			}
-		}
 	}
 };
+
+export default config;
