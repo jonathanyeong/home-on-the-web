@@ -1,12 +1,7 @@
 <script>
   import Logo from './icons/Logo.svelte';
-  import { beforeUpdate } from 'svelte';
   import { page } from '$app/stores';
-  let pathName;
-  beforeUpdate(() => {
-    const { path } = $page;
-    pathName = path;
-  });
+  $: path = $page.path;
 </script>
 
 <nav>
@@ -15,10 +10,10 @@
     <Logo />
   </a>
   <div class="nav-links">
-    <a href="/" class:active="{pathName === '/'}">Home</a>
-    <a href="/garden" class:active="{pathName === '/garden'}">Digital Garden</a>
-    <a href="/tutorials" class:active="{pathName === '/tutorials'}">Tutorials</a>
-    <a href="/about" class:active="{pathName === '/about'}">About</a>
+    <a href="/" class:active="{path === '/'}">Home</a>
+    <a href="/garden" class:active="{path === '/garden'}">Digital Garden</a>
+    <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a>
+    <a href="/about" class:active="{path === '/about'}">About</a>
   </div>
 </nav>
 
