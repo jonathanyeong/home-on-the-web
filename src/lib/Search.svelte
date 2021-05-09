@@ -3,13 +3,14 @@
   export let data = [];
   export let query = "";
   export let options = {};
+  export let formatted = [];
   $: fuse = new Fuse(data, options);
   $: if (data) fuse.setCollection(data);
   $: if (query || data) {
-    result = fuse.search(query);
-    formatted = result.map((r) => {
-      return JSON.parse(r.item)
-    });
+    let result = fuse.search(query);
+    formatted = result.map((r) => { r.item });
+    console.log("formatted is", formatted)
+
   }
 
 </script>
