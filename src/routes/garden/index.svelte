@@ -43,7 +43,7 @@
 	}
 </script>
 
-<h1>Welcome to the Garden</h1>
+<h1 class="title">Digital Garden</h1>
 <input placeholder="Search!" type="text" bind:value={query} />
 <p>Tag list is:</p>
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
@@ -54,6 +54,9 @@
 </div>
 
 <style lang="scss">
+	h1 {
+		color: var(--primary-400);
+	}
 	.garden-posts {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));

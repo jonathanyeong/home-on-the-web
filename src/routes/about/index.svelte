@@ -5,7 +5,7 @@
       <img src="https://res.cloudinary.com/jonathan-yeong/image/upload/v1596067022/personal-blog/profile_pic_alznjm.jpg" alt="jonathan yeong" class="profile-img"/>
     </div>
   </div>
-  <div class="col">
+  <div class="col first-section">
     <h2>Hi There!</h2>
 
     <p>
@@ -45,7 +45,6 @@
 <style lang="scss">
   h1 {
     color: var(--primary-400);
-    margin-top: 48px;
   }
   .row {
     display: flex;
@@ -66,6 +65,9 @@
   }
   .col:last-child {
     margin-left: 16px;
+    &.first-section {
+     margin-left: 32px;
+   }
   }
 
   .second-section {
