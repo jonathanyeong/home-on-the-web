@@ -28,7 +28,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">= 12.17.0"
+		"node": ">= 15.4.0"
 	},
 	"dependencies": {
 		"fuse.js": "^6.4.6"

@@ -1,7 +1,6 @@
 <script>
   import Logo from './icons/Logo.svelte';
   import { page } from '$app/stores';
-  $: path = $page.path;
 </script>
 
 <nav>
@@ -10,10 +9,10 @@
     <Logo />
   </a>
   <div class="nav-links">
-    <a href="/" class:active="{path === '/'}">Home</a>
-    <a href="/garden" class:active="{path === '/garden'}">Digital Garden</a>
-    <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a>
-    <a href="/about" class:active="{path === '/about'}">About</a>
+    <a href="/" class:active="{$page.path === '/'}">Home</a>
+    <a href="/garden" class:active="{$page.path === '/garden'}">Digital Garden</a>
+    <!-- <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a> -->
+    <a href="/about" class:active="{$page.path === '/about'}">About</a>
   </div>
 </nav>
 
