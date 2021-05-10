@@ -14,6 +14,7 @@
 
 
 <script>
+	import PostCard from '$lib/PostCard.svelte';
 	import TagGroup from '$lib/TagGroup.svelte';
   export let posts;
 	export let tags;
@@ -46,8 +47,17 @@
 <input placeholder="Search!" type="text" bind:value={query} />
 <p>Tag list is:</p>
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
-<ol>
+<div class="garden-posts">
 	{#each formatted as post}
-		<li><a sveltekit:prefetch href="/garden/{post.slug}">{post.title} - {post.tags}</a></li>
+		<PostCard date={post.date} slug={post.slug} title={post.title} />
 	{/each}
-</ol>
+</div>
+
+<style lang="scss">
+	.garden-posts {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+	  grid-gap: 16px;
+		margin-bottom: 16px;
+	}
+</style>
