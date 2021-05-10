@@ -33,7 +33,7 @@
 	<h2 class="h3">Picked from the Garden</h2>
 	<div class="garden-posts">
 		{#each postList as post}
-			<PostCard date={post.date} slug={post.slug} title={post.title} />
+			<PostCard {post} />
 		{/each}
 	</div>
 	<p class="more-posts-container">

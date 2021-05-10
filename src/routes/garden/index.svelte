@@ -49,7 +49,7 @@
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
 <div class="garden-posts">
 	{#each formatted as post}
-		<PostCard date={post.date} slug={post.slug} title={post.title} />
+		<PostCard {post} />
 	{/each}
 </div>
 

@@ -1,7 +1,6 @@
 <script>
-  export let slug;
-  export let title;
-  export let date;
+	export let post;
+	const { slug, title, date, tags } = post
 
   const dateObj = new Date(date)
 
@@ -18,22 +17,13 @@
 </script>
 
 <article class="garden-post">
-  <div class="garden-post-inner">
+  <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
     <time class="garden-post-info" datetime="{htmlDate}">{readableDate}</time>
-    <a sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</a>
-  </div>
+    <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
+	</a>
 </article>
 
 <style lang="scss">
-  a {
-		color: var(--gray-700);
-		text-decoration: none;
-		&:visited {
-			color: var(--gray-700);
-			text-decoration: none;
-		}
-	}
-
   .garden-post {
 		border-radius: 5px;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -50,6 +40,7 @@
 		position: relative;
 		height: 100%;
 		flex-direction: column;
+		text-decoration: none;
 	}
 
 	.garden-post:hover .garden-post-inner {
@@ -58,6 +49,8 @@
 
 	.garden-post-title {
 		font-family: var(--font-family-medium);
+		color: var(--gray-700);
+		text-decoration: none;
 	}
 
 	.garden-post-info {
