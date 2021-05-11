@@ -14,11 +14,17 @@
   da = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(dateObj);
 
   let htmlDate = `${ye}-${mo}-${da}`;
+
+	function readableTags(postTags) {
+		const combineTag = (acc, curr) => `${acc}, #${curr}`
+
+		return postTags.reduce(combineTag, `#${postTags.shift()}`)
+	}
 </script>
 
 <article class="garden-post">
   <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
-    <time class="garden-post-info" datetime="{htmlDate}">{readableDate}</time>
+    <span class="garden-post-info"><time datetime="{htmlDate}">{readableDate}</time> • {readableTags(tags)}</span>
     <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
 	</a>
 </article>
