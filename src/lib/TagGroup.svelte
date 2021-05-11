@@ -29,7 +29,7 @@
 </ul>
 
 
-<style type="scss">
+<style lang="scss">
   ul {
     display: flex;
     list-style: none;

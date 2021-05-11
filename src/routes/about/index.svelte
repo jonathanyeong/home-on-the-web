@@ -1,3 +1,9 @@
+<script>
+  import MailIcon from '$lib/icons/MailIcon.svelte';
+  import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
+  import YoutubeIcon from '$lib/icons/YoutubeIcon.svelte';
+</script>
+
 <h1 class="title">About Me</h1>
 <div class="row">
   <div class="col">
@@ -35,9 +41,9 @@
   <div class="col connect-with-me">
     <h2>Connect with me</h2>
     <ul>
-      <li><a href="mailto:hello@jonathanyeong.com">Email</a></li>
-      <li><a href="https://twitter.com/jonoyeong">Twitter</a></li>
-      <li><a href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA">Youtube</a></li>
+      <li><a href="mailto:hello@jonathanyeong.com"><span class="visually-hidden">Email</span><MailIcon className="about-icon" /></a></li>
+      <li><a href="https://twitter.com/jonoyeong"><span class="visually-hidden">Twitter</span><TwitterIcon className="about-icon"  /></a></li>
+      <li><a href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA"><span class="visually-hidden">Youtube</span><YoutubeIcon className="about-icon"/></a></li>
     </ul>
   </div>
 </div>
@@ -76,5 +82,32 @@
 
   .connect-with-me {
     flex: 1;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  li {
+    margin-left: 8px;
+    margin-right: 8px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  :global(.about-icon) {
+    fill: var(--gray-700);
+  }
+
+  a:hover {
+    opacity: 0.7;
   }
 </style>

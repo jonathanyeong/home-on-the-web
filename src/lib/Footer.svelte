@@ -7,9 +7,9 @@
 
 <footer>
   <p>
-    <a href="/rss.xml"><RssIcon className="footer-icon" /></a>
-    <a href="https://twitter.com/JonoYeong"><TwitterIcon className="footer-icon" /></a>
-    <a href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA"><YoutubeIcon className="footer-icon" /></a>
+    <a href="/rss.xml"><span class="visually-hidden">RSS Feed</span><RssIcon className="footer-icon" /></a>
+    <a href="https://twitter.com/JonoYeong"><span class="visually-hidden">Twitter</span><TwitterIcon className="footer-icon" /></a>
+    <a href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA"><span class="visually-hidden">Youtube</span><YoutubeIcon className="footer-icon" /></a>
   </p>
   <p>Made with <span>&hearts;</span> © {currYear} Jonathan Yeong</p>
 </footer>
