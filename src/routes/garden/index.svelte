@@ -69,9 +69,6 @@
 </div>
 
 <style lang="scss">
-	h1 {
-		color: var(--primary-400);
-	}
 	.garden-posts {
 		margin-top: 48px;
 		display: grid;

@@ -42,11 +42,6 @@
 </main>
 
 <style lang="scss">
-	.title {
-		color: var(--primary-400);
-		margin-top: 64px;
-	}
-
 	.subtitle {
 		font-family: var(--font-family-light);
 		max-width: 820px;
