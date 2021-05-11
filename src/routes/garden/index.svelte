@@ -41,10 +41,22 @@
 			activeTags = event.detail.activeTags;
 		}
 	}
+
+	function handleKeydown(event) {
+		if (event.keyCode === 220) {
+			event.preventDefault();
+			document.getElementById("postSearch").focus();
+		}
+	}
 </script>
 
+<svelte:window on:keydown={handleKeydown}/>
+
 <h1 class="title">Digital Garden</h1>
-<input placeholder="Search!" type="text" bind:value={query} />
+<div class="searchbar">
+	<label for="postSearch" class="visually-hidden">Search for post</label>
+	<input id="postSearch" placeholder="Search for posts (press \ to focus)" type="text" bind:value={query} />
+</div>
 <p>Tag list is:</p>
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
 <div class="garden-posts">
@@ -62,5 +74,26 @@
 		grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
 	  grid-gap: 16px;
 		margin-bottom: 16px;
+	}
+	input {
+		color: var(--gray-700);
+		font-family: var(--font-family-light);
+		font-size: 1rem;
+		background-image: url('/searchIcon.svg');
+  	background-position: 10px 15px;
+  	background-repeat: no-repeat;
+		width: 100%;
+		height: 48px;
+		padding-top: 5px;
+		border-radius: 5px;
+		border: 2px solid var(--gray-300);
+		position: relative;
+		padding-left: 40px;
+
+		&::placeholder {
+			color: var(--gray-400);
+			font-size: 1rem;
+			font-family: var(--font-family-light);
+		}
 	}
 </style>
