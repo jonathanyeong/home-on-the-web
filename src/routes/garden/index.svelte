@@ -73,6 +73,7 @@
 		color: var(--primary-400);
 	}
 	.garden-posts {
+		margin-top: 48px;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
 	  grid-gap: 16px;

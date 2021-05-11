@@ -22,15 +22,48 @@
   }
 </script>
 
-<style>
-  button.selected {
-    background-color: pink;
-    color: white;
-  }
-</style>
-
 <ul>
 	{#each tags as tag, index}
 		<li><button class:selected="{handleSelect[index]}"  on:click|preventDefault={() => toggleTagToFilter(tag, index)}>{tag}</button></li>
 	{/each}
 </ul>
+
+
+<style type="scss">
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-left: 4px;
+    margin-right: 4px;
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  button {
+    color: var(--gray-700);
+    font-family: var(--font-family-light);
+    font-size: var(--small-text);
+    padding: 8px;
+    background: var(--white);
+    border-radius: 5px;
+    border: 1px solid var(--primary-400);
+    text-transform: capitalize;
+    &:hover {
+      cursor: pointer;
+      color: var(--white);
+      background: var(--primary-400);
+    }
+  }
+  button.selected {
+    background-color: var(--primary-400);
+    color: var(--white);
+  }
+</style>
