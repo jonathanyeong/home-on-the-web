@@ -22,9 +22,10 @@
 	}
 </script>
 
+<!-- <time datetime="{htmlDate}">{readableDate}</time> -->
 <article class="garden-post">
   <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
-    <span class="garden-post-info"><time datetime="{htmlDate}">{readableDate}</time> • {readableTags(tags)}</span>
+    <span class="garden-post-info">{readableTags(tags)}</span>
     <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
 	</a>
 </article>
@@ -66,6 +67,6 @@
 
 	.garden-post-info,
 	.garden-post-title {
-		margin: 18px 20px 0;
+		margin: 16px 16px 0;
 	}
 </style>
