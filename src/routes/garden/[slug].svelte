@@ -35,18 +35,19 @@
   export let rendered;
   export let title;
   export let description;
-  export let pageUrl; // TODO: This might not return the full URL
+  export let pageUrl;
 
-  let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${pageUrl}`)
+  const fullUrl = `https://jonathanyeong.com${pageUrl}`
+  let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
 </script>
 
 <svelte:head>
 	<title>{title}</title>
   <meta property="og:title" content="{title}"/>
-  <meta property="og:url" content="{pageUrl}" />
+  <meta property="og:url" content="{fullUrl}" />
   <meta property="og:description" content="{description}" />
   <meta property="og:type" content="article" />
-  <link rel="canonical" href="{pageUrl}" />
+  <link rel="canonical" href="{fullUrl}" />
 </svelte:head>
 
 <div>
