@@ -16,7 +16,7 @@
           title: plant.title,
           description: plant.description,
           pageUrl: page.path,
-          rendered: plant.rendered,
+          rendered: plant.rendered
         },
       };
     } else {
@@ -51,7 +51,7 @@
 <div>
   <h1 class="title">{title}</h1>
   {#key rendered}
-      <article>
+      <article class="prose">
         <svelte:component this={rendered} />
       </article>
   {/key}

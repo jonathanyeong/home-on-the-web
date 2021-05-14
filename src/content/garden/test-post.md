@@ -14,22 +14,22 @@ tags:
   import Tweet from '$lib/Tweet.svelte';
 </script>
 
-# Markdown: Syntax
+## Markdown: Syntax
 
 - [Markdown: Syntax](#markdown-syntax)
-  - [Overview](#overview)
-    - [Embeds](#embeds)
-    - [Philosophy](#philosophy)
-  - [Block Elements](#block-elements)
-    - [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
-    - [Headers](#headers)
-    - [Blockquotes](#blockquotes)
-    - [Lists](#lists)
-    - [Code Blocks](#code-blocks)
-  - [Span Elements](#span-elements)
-    - [Links](#links)
-    - [Emphasis](#emphasis)
-    - [Code](#code)
+- [Overview](#overview)
+  - [Embeds](#embeds)
+  - [Philosophy](#philosophy)
+- [Block Elements](#block-elements)
+  - [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
+  - [Headers](#headers)
+  - [Blockquotes](#blockquotes)
+  - [Lists](#lists)
+  - [Code Blocks](#code-blocks)
+- [Span Elements](#span-elements)
+  - [Links](#links)
+  - [Emphasis](#emphasis)
+  - [Code](#code)
 
 
 ----

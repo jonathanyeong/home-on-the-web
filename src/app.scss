@@ -1,7 +1,3 @@
-pre {
-	border-radius: 5px;
-}
-
 @font-face {
 	font-family: 'AvenirLTPro-Book';
 	src: url('/fonts/AvenirLTPro-Book/font.woff2') format('woff2'), url('/fonts/AvenirLTPro-Book/font.woff') format('woff');
@@ -37,6 +33,7 @@ body {
 	--primary-400: #16697A;
 	--secondary-100: #D3ECF1;
 	--secondary-400: #59C3C3;
+	--gray-200: #E5E7EB;
 	--gray-300: #D1D5DB;
 	--gray-400: #9CA3AF;
 	--gray-700: #374151;
@@ -121,4 +118,120 @@ ol {
 	overflow: auto;
 	position: absolute;
 	width: auto;
+}
+
+// Uses Prism Monokai Dark Styles
+code[class*="language-"],
+pre[class*="language-"],
+pre {
+	font-size: 0.9rem;
+	line-height: 1.5;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	background: #272822;
+	color: #f8f8f2;
+}
+
+pre[class*="language-"],
+pre {
+	padding: 1rem 1rem;
+	margin: .5em 0;
+	border-radius: 5px;
+	overflow: auto;
+
+	code[class*="language-"] {
+		padding: 0;
+	}
+}
+
+.highlight-line {
+	display: block;
+	padding: 0.125em 1em;
+	text-decoration: none;
+	/* override del, ins, mark defaults */
+	color: inherit;
+	/* override del, ins, mark defaults */
+}
+
+pre,
+code {
+	font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+	line-height: 1.5;
+	border-radius: 5px;
+}
+
+code {
+	background-color: var(--gray-200);
+	color: var(--gray-700);
+	font-size: 0.8rem;
+	padding: 0.2rem 0.5rem;
+}
+
+// Post styling
+// TODO: Less than ideal, I'd rather have the styling on the [slug].svelte
+.prose {
+	display: flex;
+	flex-direction: column;
+
+	a {
+		text-decoration: none;
+		color: var(--primary-400);
+		font-family: var(--font-family-medium);
+	}
+
+	h2,
+	h3,
+	h4 {
+		display: flex;
+		align-items: center;
+		a {
+			width: 24px;
+		}
+	}
+
+	img {
+		// TODO: Responsive styles
+		max-width: 120%;
+		width: 120%;
+		margin: 0 -10%;
+	}
+
+	.anchor {
+		padding-right: 6px;
+		margin-left: -30px;
+
+		.jam-link {
+			fill: var(--gray-700);
+			visibility: hidden;
+		}
+	}
+
+	h2 {
+		font-size: var(--heading-one);
+	}
+
+	h3 {
+		font-size: var(--heading-two);
+	}
+
+	h4 {
+		font-size: var(--heading-three);
+	}
+
+	h2:hover > .anchor .jam-link,
+	h3:hover > .anchor .jam-link,
+	h4:hover > .anchor .jam-link {
+		visibility: visible;
+	}
+
 }
