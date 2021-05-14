@@ -3,13 +3,22 @@
 	import '../app.scss';
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	let onLoad = false;
+
+	onMount(() => {
+		setTimeout(() => onLoad = true, 50)
+	});
 </script>
 
-<div class="container">
-	<Navbar />
-	<slot />
-</div>
-<Footer />
+{#if onLoad}
+	<div class="container" in:fly="{{ y: 100, duration: 200 }}">
+		<Navbar />
+		<slot />
+	</div>
+	<Footer />
+{/if}
 
 <style lang="scss">
 	.container {
