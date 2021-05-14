@@ -31,6 +31,7 @@
 </script>
 
 <script>
+  import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
   export let rendered;
   export let title;
   export let description;
@@ -55,5 +56,31 @@
         <svelte:component this={rendered} />
       </article>
   {/key}
-  <p>Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}" data-dnt="true">Twitter</a></p>
+  <hr />
+  <p class="twitter-share-container">Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}" data-dnt="true" class="twitter-share-link"><TwitterIcon className="twitter-share-icon" /> Twitter</a></p>
 </div>
+
+<style lang="scss">
+  hr {
+    border: 1px solid var(--gray-200);
+  }
+  .twitter-share-container {
+    text-align: center;
+  }
+
+  .twitter-share-container :global(.twitter-share-icon) {
+    fill: var(--primary-400);
+    position: absolute;
+    left: 0;
+    top: -4px;
+  }
+  .twitter-share-link {
+    text-decoration: none;
+    color: var(--primary-400);
+    font-family: var(--font-family-medium);
+    position: relative;
+    padding-left: 25px;
+  }
+
+
+</style>
