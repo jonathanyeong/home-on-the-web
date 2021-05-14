@@ -234,4 +234,11 @@ code {
 		visibility: visible;
 	}
 
+	blockquote {
+		border-left: 5px solid var(--heliotrope-gray);
+		margin-inline-start: 0;
+		padding-left: 40px;
+		font-size: 20px;
+		font-style: italic;
+	}
 }
