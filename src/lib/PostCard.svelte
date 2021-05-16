@@ -1,21 +1,18 @@
 <script>
 	export let post;
 	$:({ slug, title, tags } = post);
-	// $:{
-	// 	const combineTag = (acc, curr) => `${acc}, #${curr}`
-	// 	tags.reduce(combineTag, `#${tags.shift()}`)
-	// 	tags = tags
-	// }
-	// function readableTags(postTags) {
-	// 	const combineTag = (acc, curr) => `${acc}, #${curr}`
 
-	// 	return postTags.reduce(combineTag, `#${postTags.shift()}`)
-	// }
+	function readableTags(postTags) {
+		const hashTags = postTags.map((tag) => {
+			return `#${tag}`
+		})
+		return hashTags.join(', ');
+	}
 </script>
 
 <article class="garden-post">
   <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
-    <span class="garden-post-info">{tags}</span>
+    <span class="garden-post-info">{readableTags(tags)}</span>
     <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
 	</a>
 </article>
