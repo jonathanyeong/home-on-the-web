@@ -25,32 +25,38 @@
 	import Fuse from 'fuse.js'
 
 	let activeTags = tags;
+	let tagToggle = false;
 	let query = "";
 	let options = { keys: ["title"] };
 	let results = []
-	let searchResults = posts;
-
+	let formattedResults = posts;
+	let activeTagPosts = []
 	const fuse = new Fuse(posts, options);
-	// $: postList = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
-  // $: if (postList) fuse.setCollection(postList);
+
   $: if (query !== "") {
-		results = fuse.search(query).map((r) => {
-			return r.item
-		});
-		searchResults = results
+		results = fuse.search(query).map(r => r.item);
+		formattedResults = results
   }
 
-	$: if (query === "") {
-		searchResults = posts;
+	$: if (query === "" && !tagToggle) {
+		formattedResults = posts;
+	}
+
+	$: if (query === "" && tagToggle) {
+		formattedResults = activeTagPosts;
 	}
 
 	function handleTagUpdate(event) {
 		if (event.detail.activeTags.length === 0) {
+			tagToggle = false;
 			activeTags = tags;
+			fuse.setCollection(posts);
 		} else {
+			tagToggle = true;
 			activeTags = event.detail.activeTags;
+			activeTagPosts = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
+			fuse.setCollection(activeTagPosts);
 		}
-		fuse.setCollection(posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0)));
 	}
 
 	function handleKeydown(event) {
@@ -75,7 +81,7 @@
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
 
 <div class="garden-posts">
-	{#each searchResults as post}
+	{#each formattedResults as post}
 		<PostCard {post} />
 	{/each}
 </div>
