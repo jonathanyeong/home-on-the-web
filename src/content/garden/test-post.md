@@ -7,6 +7,7 @@ description: This post is a guide to the Javascript tool ecosystem. I look at th
   what I would choose for my next project.
 tags:
   - test
+  - test2
 ---
 
 <script>

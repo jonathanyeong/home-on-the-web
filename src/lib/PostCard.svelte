@@ -1,31 +1,21 @@
 <script>
 	export let post;
-	const { slug, title, date, tags } = post
+	$:({ slug, title, tags } = post);
+	// $:{
+	// 	const combineTag = (acc, curr) => `${acc}, #${curr}`
+	// 	tags.reduce(combineTag, `#${tags.shift()}`)
+	// 	tags = tags
+	// }
+	// function readableTags(postTags) {
+	// 	const combineTag = (acc, curr) => `${acc}, #${curr}`
 
-  const dateObj = new Date(date)
-
-  let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(dateObj);
-  let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(dateObj);
-  let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(dateObj);
-
-  let readableDate = `${da} ${mo}, ${ye}`;
-
-  mo = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(dateObj);
-  da = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(dateObj);
-
-  let htmlDate = `${ye}-${mo}-${da}`;
-
-	function readableTags(postTags) {
-		const combineTag = (acc, curr) => `${acc}, #${curr}`
-
-		return postTags.reduce(combineTag, `#${postTags.shift()}`)
-	}
+	// 	return postTags.reduce(combineTag, `#${postTags.shift()}`)
+	// }
 </script>
 
-<!-- <time datetime="{htmlDate}">{readableDate}</time> -->
 <article class="garden-post">
   <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
-    <span class="garden-post-info">{readableTags(tags)}</span>
+    <span class="garden-post-info">{tags}</span>
     <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
 	</a>
 </article>

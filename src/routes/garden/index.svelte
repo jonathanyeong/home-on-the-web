@@ -2,44 +2,55 @@
   export const prerender = true;
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
-		const {posts, tags} = await res.json();
-		return {
-			props: {
-				posts: posts,
-				tags: tags
-			}
-		};
+
+		if (res.ok) {
+			const { posts, tags } = await res.json();
+			return {
+				props: {
+					posts,
+					tags
+				}
+			};
+		}
+
 	}
 </script>
 
 
 <script>
+	export let posts;
+	export let tags;
 	import PostCard from '$lib/PostCard.svelte';
 	import TagGroup from '$lib/TagGroup.svelte';
-  export let posts;
-	export let tags;
 	import Fuse from 'fuse.js'
 
 	let activeTags = tags;
 	let query = "";
 	let options = { keys: ["title"] };
-	let result = []
-	let formatted = [];
+	let results = []
+	let searchResults = posts;
 
-	$: postList = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
-	$: fuse = new Fuse(postList, options);
-  $: if (postList) fuse.setCollection(postList);
-	$: if (query === "") formatted = postList
+	const fuse = new Fuse(posts, options);
+	// $: postList = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
+  // $: if (postList) fuse.setCollection(postList);
   $: if (query !== "") {
-    result = fuse.search(query);
-		formatted = result.map((r) => { return r.item });
+		results = fuse.search(query).map((r) => {
+			return r.item
+		});
+		searchResults = results
   }
+
+	$: if (query === "") {
+		searchResults = posts;
+	}
+
 	function handleTagUpdate(event) {
 		if (event.detail.activeTags.length === 0) {
 			activeTags = tags;
 		} else {
 			activeTags = event.detail.activeTags;
 		}
+		fuse.setCollection(posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0)));
 	}
 
 	function handleKeydown(event) {
@@ -62,8 +73,9 @@
 	<input id="postSearch" placeholder="Search for posts (press \ to focus)" type="text" bind:value={query} />
 </div>
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
+
 <div class="garden-posts">
-	{#each formatted as post}
+	{#each searchResults as post}
 		<PostCard {post} />
 	{/each}
 </div>
