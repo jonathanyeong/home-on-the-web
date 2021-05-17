@@ -67,7 +67,7 @@
 <div>
   <h1 class="title">{title}</h1>
   <p class="post-meta"><span>Last updated <time datetime="{htmlDate}">{readableDate}</time></span><span>•</span><span>{readableTags(tags)}</span></p>
-  <hr />
+  <hr class="post-header-divider" />
   {#key rendered}
       <article class="prose">
         <svelte:component this={rendered} />
@@ -78,6 +78,9 @@
 </div>
 
 <style lang="scss">
+  .post-header-divider {
+    margin-bottom: 2rem;
+  }
   .title {
     margin-bottom: 0.8rem;
   }

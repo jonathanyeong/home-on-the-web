@@ -9,3 +9,10 @@
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen>
 </iframe>
+
+<style lang="scss">
+  iframe {
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+</style>

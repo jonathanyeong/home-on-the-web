@@ -35,4 +35,12 @@
   </script>
 </svelte:head>
 
-<div id="tweetContainer"></div>
+<div class="twitter-embed" id="tweetContainer"></div>
+
+<style lang="scss">
+  .twitter-embed {
+    align-self: center;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+</style>
