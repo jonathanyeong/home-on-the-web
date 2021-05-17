@@ -1,6 +1,9 @@
-# create-svelte
+# Home on the Web
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+The repo for my [personal website](https://jonathanyeong.com).
+
+Some gotchas:
+- Add lastUpdated to the post frontmatter after updating a post. You will also need to have a date field which is legacy for createdAt.
 
 ## Creating a project
 
