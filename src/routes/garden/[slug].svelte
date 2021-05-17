@@ -8,15 +8,13 @@
   export async function load({ page, fetch, session, context }) {
     const { slug } = page.params
     const allPlants = await plants();
-    const plant = allPlants[slug]
+    const post = allPlants[slug]
 
-    if (plant) {
+    if (post) {
       return {
         props: {
-          title: plant.title,
-          description: plant.description,
-          pageUrl: page.path,
-          rendered: plant.rendered
+          post,
+          pageUrl: page.path
         },
       };
     } else {
@@ -32,13 +30,29 @@
 
 <script>
   import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
-  export let rendered;
-  export let title;
-  export let description;
+  export let post;
   export let pageUrl;
 
+  const { rendered, title, description, tags, date } = post
+  const lastUpdated = post?.lastUpdated ? post.lastUpdated : date
   const fullUrl = `https://jonathanyeong.com${pageUrl}`
   let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
+
+  function readableTags(postTags) {
+		const hashTags = postTags.map((tag) => {
+			return `#${tag}`
+		})
+		return hashTags.join(', ');
+	}
+
+  const dateObj = new Date(lastUpdated)
+  let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(dateObj);
+  let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(dateObj);
+  let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(dateObj);
+  const readableDate = `${da} ${mo}, ${ye}`;
+  mo = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(dateObj);
+  da = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(dateObj);
+  const htmlDate = `${ye}-${mo}-${da}`;
 </script>
 
 <svelte:head>
@@ -52,6 +66,8 @@
 
 <div>
   <h1 class="title">{title}</h1>
+  <p class="post-meta"><span>Last updated <time datetime="{htmlDate}">{readableDate}</time></span><span>•</span><span>{readableTags(tags)}</span></p>
+  <hr />
   {#key rendered}
       <article class="prose">
         <svelte:component this={rendered} />
@@ -62,6 +78,18 @@
 </div>
 
 <style lang="scss">
+  .title {
+    margin-bottom: 0.8rem;
+  }
+  .post-meta {
+    text-transform: uppercase;
+    font-family: var(--font-family-heavy);
+    font-size: var(--small-text);
+    color: var(--gray-400);
+    span {
+      margin-right: 10px;
+    }
+  }
   hr {
     border: 1px solid var(--gray-200);
   }

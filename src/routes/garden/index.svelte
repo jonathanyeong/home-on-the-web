@@ -70,10 +70,10 @@
 <svelte:window on:keydown={handleKeydown}/>
 
 <h1 class="title">Digital Garden</h1>
-<p class="h4">
+<!-- <p class="h4">
 	Notes that are in varying stages of "done", ranging from musings to more concrete and researched thoughts.
 	Search for any particular post or filter by a tag.
-</p>
+</p> -->
 <div class="searchbar">
 	<label for="postSearch" class="visually-hidden">Search for post</label>
 	<input id="postSearch" placeholder="Search for posts (press \ to focus)" type="text" bind:value={query} />
