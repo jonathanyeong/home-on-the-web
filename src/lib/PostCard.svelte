@@ -35,10 +35,11 @@
 		height: 100%;
 		flex-direction: column;
 		text-decoration: none;
+		transition: transform 0.1s ease-in-out;
 	}
 
 	.garden-post:hover .garden-post-inner {
-		transform: translateY(-10px);
+		transform: translate(-5px, -10px);
 	}
 
 	.garden-post-title {

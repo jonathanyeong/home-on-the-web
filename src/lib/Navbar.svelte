@@ -36,7 +36,20 @@
       margin-right: 0.2rem;
       display: inline-block;
       text-decoration: none;
+      position: relative;
 
+      &:before {
+        content: '';
+        background: var(--secondary-400);
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: -1px;
+        transition: width 0.3s ease-in-out 0s;
+      }
+      &:hover::before {
+        width: 100%;
+      }
       @media (min-width: 768px) {
         margin-right: 2rem;
       }

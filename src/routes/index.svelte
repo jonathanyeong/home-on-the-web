@@ -37,7 +37,7 @@
 		{/each}
 	</div>
 	<p class="more-posts-container">
-		<a href="/garden" class="more-posts-link">More from the garden <ArrowRight className="homepage-arrow"/></a>
+		<a href="/garden" class="more-posts-link"><span>More from the garden</span> <ArrowRight className="homepage-arrow"/></a>
 	</p>
 </main>
 
@@ -68,6 +68,11 @@
 			width: 16px;
 			height: 6px;
 			bottom: 5px;
+		  transition: width 0.3s ease-in-out 0s;
+		}
+
+		&:hover::before {
+			width: 100%;
 		}
 	}
 
@@ -79,7 +84,7 @@
 
 	.twitter-link {
 		&:before {
-			background: var(--heliotrope-gray);
+			background: var(--twitter-pastel);
 		}
 	}
 	.garden-posts {
@@ -98,12 +103,29 @@
 	}
 
 	.more-posts-link {
+		position: relative;
 		font-family: var(--font-family-medium);
 		display: flex;
 		align-items: center;
 		color: var(--gray-700);
 		:global(.homepage-arrow) {
 			fill: var(--gray-700);
+		}
+		&:hover > span::before {
+			width: 100%;
+		}
+		span {
+			position: relative;
+			&:before {
+				content: '';
+				background: var(--secondary-400);
+				width: 0;
+				height: 2px;
+				position: absolute;
+				bottom: -1px;
+				transition: width 0.3s ease-in-out 0s;
+			}
+
 		}
 	}
 
