@@ -94,6 +94,9 @@
 	  grid-gap: 16px;
 		margin-bottom: 16px;
 	}
+	.searchbar {
+		display: flex;
+	}
 	input {
 		color: var(--gray-700);
 		font-family: var(--font-family-light);

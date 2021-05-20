@@ -44,7 +44,7 @@
         width: 0;
         height: 2px;
         position: absolute;
-        bottom: -1px;
+        bottom: -4px;
         transition: width 0.3s ease-in-out 0s;
       }
       &:hover::before {

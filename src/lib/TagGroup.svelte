@@ -56,6 +56,7 @@
     border-radius: 5px;
     border: 1px solid var(--primary-400);
     text-transform: capitalize;
+    transition: color 0.1s ease-in-out, background-color 0.08s ease-in-out;
     &:hover {
       cursor: pointer;
       color: var(--white);

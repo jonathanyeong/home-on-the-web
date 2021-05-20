@@ -40,6 +40,12 @@
   a {
     display: inline-block;
     margin-right: 16px;
+    opacity: 1;
+    transition: opacity 0.02s;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
   a:last-child {
     margin-right: 0;

@@ -107,7 +107,11 @@
     fill: var(--gray-700);
   }
 
-  a:hover {
-    opacity: 0.7;
+  a {
+    transition: opacity 0.02s;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 </style>
