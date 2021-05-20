@@ -11,6 +11,11 @@ tags:
   - tooling
   - javascript
 ---
+
+<script>
+  import CopyCodeHeader from '$lib/CopyCodeHeader.svelte';
+</script>
+
 I'm relatively new to the Javascript (JS) tooling ecosystem and it's... overwhelming. There seem to be many tools that solve the same problem. Sure there are tools more popular than others, and maybe some industry-standard tools. For example, Webpack is the default module bundler for Rails. But I still want to figure out if these defacto tools are the best choice. This post will explore the types of tools out there, the features they have, and then my pick on what tool to use. I'll update this post as I gather more information or if anything changes!
 
 ## What do I mean by JS tools?
@@ -35,6 +40,8 @@ These bundlers share a lot of the same features. Let's go through these features
 Recently, module bundlers have been improving their support of no configuration bundling. I can see why this trend is growing. At my company the Webpack config is huge. Honestly, it looks like hieroglyphics to me. You can imagine if your application isn't building you wouldn't want to debug a config. With no-config bundling, you specify your entry files and your module bundler will intelligently detect what the defaults are and output the right bundle.
 
 For example, to build something in Parcel you will just need to specify an entry file (or multiple):
+
+<CopyCodeHeader />
 
 ```bash
 parcel index.html about.html

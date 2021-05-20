@@ -53,6 +53,25 @@
   mo = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(dateObj);
   da = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(dateObj);
   const htmlDate = `${ye}-${mo}-${da}`;
+
+  const codeBlocks = document.querySelectorAll('.code-header + pre');
+  const copyCodeButtons = document.querySelectorAll('.copy-code-button');
+
+  console.log("Code blocks: ", codeBlocks);
+  console.log("Copy Code Buttons: ", copyCodeButtons);
+  copyCodeButtons.forEach((copyCodeButton, index) => {
+    const code = codeBlocks[index].innerText;
+
+    copyCodeButton.addEventListener('click', () => {
+      window.navigator.clipboard.writeText(code);
+      copyCodeButton.classList.add('copied');
+
+      setTimeout(() => {
+        copyCodeButton.classList.remove('copied');
+      }, 2000);
+    });
+  });
+
 </script>
 
 <svelte:head>
