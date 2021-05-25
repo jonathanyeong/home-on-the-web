@@ -16,12 +16,16 @@
 
 <style lang="scss">
   footer {
-    margin-top: 88px;
+    margin-top: 44px;
     display: flex;
     flex-direction: column;
     background-color: var(--wheat);
     justify-content: flex-end;
     padding: 40px 0 20px;
+
+    @media (min-width: 768px) {
+      margin-top: 88px;
+		}
   }
   span {
     color: var(--secondary-400);

@@ -24,5 +24,10 @@
 	.container {
 		max-width: var(--twelve-column-width);
   	margin: 0 auto;
+		padding: 8px;
+
+		@media (min-width: 768px) {
+			padding: 0;
+		}
 	}
 </style>

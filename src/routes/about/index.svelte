@@ -54,6 +54,11 @@
   }
   .row {
     display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   .profile-img__container {
@@ -67,12 +72,22 @@
   }
 
   .col:first-child {
+    margin-bottom: 16px;
     margin-right: 16px;
+
+    @media (min-width: 768px) {
+      margin-right: 16px;
+    }
   }
   .col:last-child {
-    margin-left: 16px;
+    @media (min-width: 768px) {
+      margin-left: 16px;
+    }
+
     &.first-section {
-     margin-left: 32px;
+      @media (min-width: 768px) {
+        margin-left: 32px;
+      }
    }
   }
 

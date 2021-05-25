@@ -34,11 +34,18 @@
     display: flex;
     list-style: none;
     padding: 0;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   li {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+
     &:first-child {
       margin-left: 0;
     }

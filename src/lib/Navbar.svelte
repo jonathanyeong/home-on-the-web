@@ -22,7 +22,11 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 8px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 48px;
+    }
   }
 
   .nav-links {
@@ -33,10 +37,14 @@
     a {
       color: var(--gray-700);
       font-family: var(--font-family-medium);
-      margin-right: 0.2rem;
+      margin-right: 8px;
       display: inline-block;
       text-decoration: none;
       position: relative;
+
+      @media (min-width: 768px) {
+        margin-right: 0.2rem;
+      }
 
       &:before {
         content: '';
@@ -50,6 +58,7 @@
       &:hover::before {
         width: 100%;
       }
+
       @media (min-width: 768px) {
         margin-right: 2rem;
       }

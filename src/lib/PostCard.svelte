@@ -23,7 +23,11 @@
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		position: relative;
 		background-color: var(--secondary-400);
-		height: 200px;
+		height: 160px;
+
+		@media (min-width: 768px) {
+			height: 200px;
+		}
 	}
 
 	.garden-post-inner {
