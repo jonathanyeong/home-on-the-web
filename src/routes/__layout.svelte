@@ -26,7 +26,7 @@
   	margin: 0 auto;
 		padding: 8px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 835px) {
 			padding: 0;
 		}
 	}
