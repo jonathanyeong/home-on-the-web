@@ -9,10 +9,10 @@
     <Logo className="logo-icon"/>
   </a>
   <div class="nav-links">
-    <a href="/" class:active="{$page.path === '/'}">Home</a>
-    <a href="/garden" class:active="{$page.path === '/garden'}">Digital Garden</a>
-    <!-- <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a> -->
-    <a href="/about" class:active="{$page.path === '/about'}">About</a>
+    <a href="/" class:active="{$page.path === '/'}" title="Home">Home</a>
+    <a href="/garden" class:active="{$page.path === '/garden'}" title="Digital Garden">Digital Garden</a>
+    <!-- COMING SOON: <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a> -->
+    <a href="/about" class:active="{$page.path === '/about'}" title="About">About</a>
   </div>
 </nav>
 
@@ -49,14 +49,16 @@
       &:before {
         content: '';
         background: var(--secondary-400);
-        width: 0;
+        width: 100%;
         height: 2px;
         position: absolute;
         bottom: -4px;
-        transition: width 0.3s ease-in-out 0s;
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
       }
+
       &:hover::before {
-        width: 100%;
+        opacity: 1;
       }
 
       @media (min-width: 768px) {

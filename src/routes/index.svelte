@@ -116,18 +116,19 @@
 			fill: var(--gray-700);
 		}
 		&:hover > span::before {
-			width: 100%;
+			opacity: 1;
 		}
 		span {
 			position: relative;
 			&:before {
 				content: '';
 				background: var(--secondary-400);
-				width: 0;
+				width: 100%;
 				height: 2px;
 				position: absolute;
 				bottom: -1px;
-				transition: width 0.3s ease-in-out 0s;
+				opacity: 0;
+				transition: opacity 0.1s ease-in-out;
 			}
 
 		}
