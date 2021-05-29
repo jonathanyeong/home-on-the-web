@@ -15,7 +15,7 @@
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import PostCard from '$lib/PostCard.svelte';
 	export let posts = [];
-	let	postList =  posts.slice(0,8)
+	let	postList =  posts.slice(0,9)
 </script>
 
 <svelte:head>
@@ -89,9 +89,13 @@
 	}
 	.garden-posts {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
-	  grid-gap: 16px;
+		grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+	  grid-gap: 20px;
 		margin-bottom: 16px;
+
+		@media (min-width: 768px) {
+			grid-gap: 30px;
+		}
 	}
 
 

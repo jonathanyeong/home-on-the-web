@@ -60,6 +60,10 @@
 
 	.garden-post:hover .garden-post-inner {
 		transform: translate(-5px, -10px);
+
+		@media (min-width: 768px) {
+			transform: translate(-8px, -15px);
+		}
 	}
 
 	.garden-post:hover {

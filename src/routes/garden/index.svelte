@@ -90,9 +90,13 @@
 	.garden-posts {
 		margin-top: 48px;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
-	  grid-gap: 16px;
+		grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+	  grid-gap: 20px;
 		margin-bottom: 16px;
+
+		@media (min-width: 768px) {
+			grid-gap: 30px;
+		}
 	}
 	.searchbar {
 		display: flex;
