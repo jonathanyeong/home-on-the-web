@@ -40,19 +40,6 @@
 
   li {
     margin: 0;
-
-    @media (min-width: 768px) {
-      margin-left: 4px;
-      margin-right: 4px;
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
   button {
     color: var(--gray-700);
