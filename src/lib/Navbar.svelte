@@ -4,9 +4,9 @@
 </script>
 
 <nav>
-  <a href="/">
+  <a class="logo-link" href="/">
     <span class="visually-hidden">Logo</span>
-    <Logo />
+    <Logo className="logo-icon"/>
   </a>
   <div class="nav-links">
     <a href="/" class:active="{$page.path === '/'}">Home</a>
@@ -76,5 +76,37 @@
         bottom: -4px;
       }
     }
+  }
+
+  // Inspired by: https://github.com/elrumordelaluz/csshake/blob/master/scss/_tools.scss
+  $chunk: 100%;
+  $r: 45deg;
+
+  @function apply-random() {
+    @return (random($r) - $r/2);
+  }
+  @keyframes rattle {
+      $interval: 20;
+      $step: $interval * 1%;
+
+      @while $step < $chunk {
+        $rotate: apply-random();
+
+        #{$step} {
+          transform-origin: center;
+          transform: rotate($rotate);
+        }
+
+        $step: $step + $interval;
+      }
+
+      #{ if($chunk < 100%, (0%, $chunk, 100%), (0%, 100%)) } {
+        transform-origin: center;
+        transform: rotate(0);
+      }
+    }
+
+  .logo-link:hover {
+    animation: rattle 100ms ease-in-out 3;
   }
 </style>
