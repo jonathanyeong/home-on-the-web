@@ -80,7 +80,7 @@
 
   // Inspired by: https://github.com/elrumordelaluz/csshake/blob/master/scss/_tools.scss
   $chunk: 100%;
-  $r: 45deg;
+  $r: 80deg;
 
   @function apply-random() {
     @return (random($r) - $r/2);
