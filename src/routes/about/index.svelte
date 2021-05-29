@@ -38,14 +38,6 @@
       have a newsletter and a YouTube channel where I dive into developer growth and processes.
     </p>
   </div>
-  <div class="col connect-with-me">
-    <h2>Connect with me</h2>
-    <ul>
-      <li><a href="mailto:hello@jonathanyeong.com"><span class="visually-hidden">Email</span><MailIcon className="about-icon" /></a></li>
-      <li><a href="https://twitter.com/jonoyeong"><span class="visually-hidden">Twitter</span><TwitterIcon className="about-icon"  /></a></li>
-      <li><a href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA"><span class="visually-hidden">Youtube</span><YoutubeIcon className="about-icon"/></a></li>
-    </ul>
-  </div>
 </div>
 
 <style lang="scss">
