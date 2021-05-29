@@ -18,11 +18,27 @@
 </article>
 
 <style lang="scss">
+	@keyframes gradient {
+    0% {
+			background-position: 0% 50%;
+    }
+    50% {
+			background-position: 100% 50%;
+    }
+    100% {
+			background-position: 0% 50%;
+    }
+	}
+
   .garden-post {
 		border-radius: 5px;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		position: relative;
-		background-color: var(--secondary-400);
+		background: linear-gradient(-45deg,
+			var(--secondary-200),
+			var(--heliotrope-gray),
+			var(--fiery-rose));
+		background-size: 300% 300%;
 		height: 160px;
 
 		@media (min-width: 768px) {
@@ -44,6 +60,10 @@
 
 	.garden-post:hover .garden-post-inner {
 		transform: translate(-5px, -10px);
+	}
+
+	.garden-post:hover {
+		animation: gradient 3s ease infinite;
 	}
 
 	.garden-post-title {

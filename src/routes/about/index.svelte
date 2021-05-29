@@ -54,7 +54,7 @@
   }
 
   .profile-img__container {
-    background-color: var(--secondary-100);
+    background-color: var(--primary-200);
     border-radius: 5px;
     img {
       transform: translate(16px, -10px);
