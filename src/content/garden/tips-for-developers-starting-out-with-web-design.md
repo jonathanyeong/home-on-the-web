@@ -2,6 +2,7 @@
 createdAtDate: 2020-07-31
 lastUpdatedDate: 2020-07-31
 title: "Tips for developers starting out with web design"
+featuredPost: true
 published: true
 tags:
 - design

@@ -2,7 +2,7 @@
 date: 2020-07-24
 title: "How to setup CI with Phoenix & Github Actions"
 published: true
-featuredPost: 4
+featuredPost: true
 tags:
   - phoenix
   - tutorial

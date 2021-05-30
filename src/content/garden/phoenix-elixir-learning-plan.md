@@ -7,7 +7,7 @@ tags:
   - learning
   - elixir
   - phoenix
-featuredPost: 3
+featuredPost: true
 ---
 **Updated: July 17, 2020 - Added another resource**
 

@@ -3,7 +3,7 @@ createdAtDate: 2020-08-22
 lastUpdatedDate: 2020-08-22
 title: "Using Github and Notion to organise side projects"
 published: true
-featuredPost: 6
+featuredPost: true
 tags:
 - advice
 ---

@@ -3,7 +3,7 @@ createdAtDate: 2020-07-02
 lastUpdatedDate: 2020-07-02
 title: "Elixir & Phoenix: Phase 1 updates"
 published: true
-featuredPost: 5
+featuredPost: true
 tags:
 - learning
 - elixir

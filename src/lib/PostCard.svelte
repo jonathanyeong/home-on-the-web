@@ -2,9 +2,7 @@
 	import { readableDate, htmlDate } from '$lib/dateParser';
 
 	export let post;
-	$:({ slug, title, tags } = post);
-
-	const lastUpdated = post?.lastUpdated ? post.lastUpdated : post.date
+	$:({ slug, title, tags, lastUpdatedDate } = post);
 
 	function readableTags(postTags) {
 		const hashTags = postTags.map((tag) => {
@@ -16,7 +14,7 @@
 
 <article class="garden-post">
   <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
-    <span class="garden-post-info"><time datetime="{htmlDate(lastUpdated)}">{readableDate(lastUpdated)}</time></span>
+    <span class="garden-post-info"><time datetime="{htmlDate(lastUpdatedDate)}">{readableDate(lastUpdatedDate)}</time></span>
     <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
 		<span class="garden-post-info garden-post-tags">{readableTags(tags)}</span>
 	</a>

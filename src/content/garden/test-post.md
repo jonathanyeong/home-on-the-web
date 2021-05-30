@@ -9,7 +9,7 @@ description: This post is a guide to the Javascript tool ecosystem. I look at th
 tags:
   - test
   - test2
-featuredPost: 1
+featuredPost: true
 ---
 
 <script>

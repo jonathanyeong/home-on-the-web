@@ -15,7 +15,12 @@
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import PostCard from '$lib/PostCard.svelte';
 	export let posts = [];
-	let	postList =  posts.slice(0,9)
+	let	postList =  posts.filter((p) => p.featuredPost).slice(0,6)
+	postList = postList.sort((a,b) => {
+		const aDate = new Date(a.lastUpdatedDate)
+		const bDate = new Date(b.lastUpdatedDate)
+		return (aDate > bDate) ? -1 : 1
+	})
 </script>
 
 <svelte:head>

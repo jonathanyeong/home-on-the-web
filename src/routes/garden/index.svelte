@@ -65,6 +65,14 @@
 			document.getElementById("postSearch").focus();
 		}
 	}
+
+	$: {
+		formattedResults = formattedResults.sort((a,b) => {
+			const aDate = new Date(a.lastUpdatedDate)
+			const bDate = new Date(b.lastUpdatedDate)
+			return (aDate > bDate) ? -1 : 1
+		})
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>

@@ -11,7 +11,7 @@ description: This post is a guide to the Javascript tool ecosystem. I look at th
 tags:
   - tooling
   - javascript
-featuredPost: 2
+featuredPost: true
 ---
 I'm relatively new to the Javascript (JS) tooling ecosystem and it's... overwhelming. There seem to be many tools that solve the same problem. Sure there are tools more popular than others, and maybe some industry-standard tools. For example, Webpack is the default module bundler for Rails. But I still want to figure out if these defacto tools are the best choice. This post will explore the types of tools out there, the features they have, and then my pick on what tool to use. I'll update this post as I gather more information or if anything changes!
 
