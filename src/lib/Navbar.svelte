@@ -76,6 +76,7 @@
         height: 2px;
         position: absolute;
         bottom: -4px;
+        opacity: 1;
       }
     }
   }
