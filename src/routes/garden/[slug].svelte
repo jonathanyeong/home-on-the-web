@@ -30,11 +30,13 @@
 
 <script>
   import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
+  import { readableDate, htmlDate } from '$lib/dateParser';
+
   export let post;
   export let pageUrl;
 
   const { rendered, title, description, tags, date } = post
-  const lastUpdated = post?.lastUpdated ? post.lastUpdated : date
+  const lastUpdated = post?.lastUpdated
   const fullUrl = `https://jonathanyeong.com${pageUrl}`
   let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
 
@@ -44,15 +46,6 @@
 		})
 		return hashTags.join(', ');
 	}
-
-  const dateObj = new Date(lastUpdated)
-  let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(dateObj);
-  let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(dateObj);
-  let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(dateObj);
-  const readableDate = `${da} ${mo}, ${ye}`;
-  mo = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(dateObj);
-  da = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(dateObj);
-  const htmlDate = `${ye}-${mo}-${da}`;
 </script>
 
 <svelte:head>
@@ -66,7 +59,13 @@
 
 <div>
   <h1 class="title">{title}</h1>
-  <p class="post-meta"><span>Last updated <time datetime="{htmlDate}">{readableDate}</time></span><span>•</span><span>{readableTags(tags)}</span></p>
+  <p class="post-meta">
+    <span>
+      Created at <time datetime="{htmlDate(date)}">{readableDate(date)}</time>
+      {#if lastUpdated}
+        - Last Updated <time datetime="{htmlDate(lastUpdated)}">{readableDate(lastUpdated)}</time>
+      {/if}
+    </span><span>•</span><span>{readableTags(tags)}</span></p>
   <hr class="post-header-divider" />
   {#key rendered}
       <article class="prose">
