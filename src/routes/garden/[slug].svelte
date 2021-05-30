@@ -35,8 +35,7 @@
   export let post;
   export let pageUrl;
 
-  const { rendered, title, description, tags, date } = post
-  const lastUpdated = post?.lastUpdated
+  const { rendered, title, description, tags, createdAtDate, lastUpdatedDate } = post
   const fullUrl = `https://jonathanyeong.com${pageUrl}`
   let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
 
@@ -61,9 +60,9 @@
   <h1 class="title">{title}</h1>
   <p class="post-meta">
     <span>
-      Created at <time datetime="{htmlDate(date)}">{readableDate(date)}</time>
-      {#if lastUpdated}
-        - Last Updated <time datetime="{htmlDate(lastUpdated)}">{readableDate(lastUpdated)}</time>
+      <time datetime="{htmlDate(createdAtDate)}">{readableDate(createdAtDate)}</time>
+      {#if lastUpdatedDate && lastUpdatedDate !== createdAtDate}
+        - Updated <time datetime="{htmlDate(lastUpdatedDate)}">{readableDate(lastUpdatedDate)}</time>
       {/if}
     </span><span>•</span><span>{readableTags(tags)}</span></p>
   <hr class="post-header-divider" />
