@@ -1,6 +1,6 @@
 ---
-date: 2021-04-19
-lastUpdated: 2021-05-29
+createdAtDate: 2021-04-19
+lastUpdatedDate: 2021-05-29
 title: This is a test post
 published: true
 description: This post is a guide to the Javascript tool ecosystem. I look at the
@@ -9,6 +9,7 @@ description: This post is a guide to the Javascript tool ecosystem. I look at th
 tags:
   - test
   - test2
+featuredPost: 1
 ---
 
 <script>

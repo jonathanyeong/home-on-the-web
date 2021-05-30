@@ -1,5 +1,6 @@
 ---
-date: 2020-12-01T00:00:00.000-08:00
+createdAtDate: 2020-12-01T00:00:00.000-08:00
+lastUpdatedDate: 2020-12-01T00:00:00.000-08:00
 title: 7 tips to help you ace your first technical interview
 description: Seven tips to help you ace your first interview. As an interviewer, I've
   seen strong candidates use these during interviews. And I've used these tips when

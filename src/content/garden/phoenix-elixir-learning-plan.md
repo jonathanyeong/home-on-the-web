@@ -1,14 +1,13 @@
 ---
-date: 2020-06-26
+createdAtDate: 2020-06-26
+lastUpdatedDate: 2020-06-26
 title: "Phoenix & Elixir Learning Plan"
 published: true
-featured_post: true
-post_weight: 2.0
 tags:
   - learning
   - elixir
   - phoenix
-lastUpdated: 2021-05-16
+featuredPost: 3
 ---
 **Updated: July 17, 2020 - Added another resource**
 

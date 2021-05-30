@@ -1,5 +1,6 @@
 ---
-date: 2020-07-31
+createdAtDate: 2020-07-31
+lastUpdatedDate: 2020-07-31
 title: "Tips for developers starting out with web design"
 published: true
 tags:

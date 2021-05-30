@@ -1,5 +1,6 @@
 ---
-date: 2020-06-06
+createdAtDate: 2020-06-06
+lastUpdatedDate: 2020-06-06
 title: "Documentation Driven Design"
 published: true
 tags:
