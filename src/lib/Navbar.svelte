@@ -6,15 +6,31 @@
 
   let darkMode = false;
   let themeAriaLabel = "Activate Dark Mode";
-  function changeTheme(e) {
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+  if (currentTheme) {
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      darkMode = true;
+      themeAriaLabel = "Activate Light Mode";
+    } else {
+      document.documentElement.removeAttribute('data-theme', 'dark');
+      darkMode = false;
+      themeAriaLabel = "Activate Dark Mode";
+    }
+  }
+
+  function changeTheme() {
     if (darkMode) {
       document.documentElement.removeAttribute('data-theme', 'dark');
       darkMode = false;
       themeAriaLabel = "Activate Dark Mode";
+      localStorage.setItem('theme', 'light');
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
       darkMode = true;
       themeAriaLabel = "Activate Light Mode";
+      localStorage.setItem('theme', 'dark');
     }
   }
 </script>
