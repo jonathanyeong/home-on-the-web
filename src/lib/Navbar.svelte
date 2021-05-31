@@ -76,10 +76,12 @@
 
     :global(.theme-icon) {
       fill: var(--body-text-color);
+      transition: fill 0.1s ease-in-out;
     }
 
     &:hover :global(.theme-icon) {
       fill: var(--theme-hover-color);
+      transition: fill 0.1s ease-in-out;
     }
   }
 
