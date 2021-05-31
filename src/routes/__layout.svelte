@@ -13,16 +13,29 @@
 </script>
 
 {#if onLoad}
-	<div class="container" in:fly="{{ y: 100, duration: 200 }}">
-		<Navbar />
-		<slot />
+	<div class="container">
+		<div class="main-content" in:fly="{{ y: 100, duration: 200 }}">
+			<Navbar />
+			<slot />
+		</div>
+		<div class="footer-container">
+			<Footer />
+		</div>
 	</div>
-	<Footer />
+
 {/if}
 
 <style lang="scss">
 	.container {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		justify-content: space-between;
+	}
+
+	.main-content {
 		max-width: var(--twelve-column-width);
+		width: 100%;
   	margin: 0 auto;
 		padding: 8px;
 
