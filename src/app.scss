@@ -56,6 +56,9 @@ body {
 	--logo-color: var(--primary-400);
 	--title-color: var(--primary-400);
 	--post-card-bg: var(--white);
+	--tag-btn-bg: var(--white);
+	--tag-btn-bg-hover: var(--primary-400);
+	--tag-btn-bg-hover-text: var(--white);
 	--footer-bg: var(--wheat);
 	--body-text-color: var(--gray-700);
 	--body-bg-color: var(--white-50);
@@ -81,6 +84,9 @@ body {
 	--logo-color: var(--secondary-400);
 	--title-color: var(--white-50);
 	--post-card-bg: var(--primary-400);
+	--tag-btn-bg: var(--primary-400);
+	--tag-btn-bg-hover: var(--primary-200);
+	--tag-btn-bg-hover-text: var(--gray-700);
 	--footer-bg: var(--primary-500);
 	--body-bg-color: var(--primary-600);
 	--subtitle-text-color: var(--gray-200);
@@ -216,12 +222,11 @@ code {
 
 	a {
 		text-decoration: none;
-		color: var(--primary-400);
+		color: var(--body-text-color);
 		font-family: var(--font-family-medium);
 		transition: color 0.05s ease-in;
 		&:hover {
 			color: var(--secondary-500);
-
 		}
 	}
 
@@ -247,7 +252,7 @@ code {
 		margin-left: -30px;
 
 		.jam-link {
-			fill: var(--gray-700);
+			fill: var(--body-text-color);
 			visibility: hidden;
 		}
 	}
@@ -281,8 +286,13 @@ code {
 	p, ul, ol {
 		margin-top: 0;
 	}
-}
 
+	hr {
+		width: 100%;
+		border: 1px solid var(--gray-200);
+	}
+}
+// END PROSE
 @media screen and (prefers-reduced-motion: reduce) {
 	* {
 		/* Very short durations means JavaScript that relies on events still works */

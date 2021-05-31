@@ -42,23 +42,24 @@
     margin: 0;
   }
   button {
-    color: var(--gray-700);
+    color: var(--body-text-color);
     font-family: var(--font-family-light);
     font-size: var(--small-text);
     padding: 8px;
-    background: var(--white);
+    background: var(--tag-btn-bg);
     border-radius: 5px;
     border: 1px solid var(--primary-400);
     text-transform: capitalize;
     transition: color 0.1s ease-in-out, background-color 0.08s ease-in-out;
+
     &:hover {
       cursor: pointer;
-      color: var(--white);
-      background: var(--primary-400);
+      color: var(--tag-btn-bg-hover-text);
+      background: var(--tag-btn-bg-hover);
     }
   }
   button.selected {
-    background-color: var(--primary-400);
-    color: var(--white);
+    color: var(--tag-btn-bg-hover-text);
+    background: var(--tag-btn-bg-hover);
   }
 </style>

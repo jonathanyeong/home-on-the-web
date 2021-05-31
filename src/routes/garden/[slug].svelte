@@ -86,7 +86,7 @@
     text-transform: uppercase;
     font-family: var(--font-family-heavy);
     font-size: var(--small-text);
-    color: var(--gray-400);
+    color: var(--subtitle-text-color);
     span {
       margin-right: 10px;
     }
@@ -99,17 +99,27 @@
   }
 
   .twitter-share-container :global(.twitter-share-icon) {
-    fill: var(--primary-400);
+    fill: var(--body-text-color);
     position: absolute;
     left: 0;
     top: -4px;
+    transition: fill 0.05s ease-in-out;
   }
+
   .twitter-share-link {
     text-decoration: none;
-    color: var(--primary-400);
+    color: var(--body-text-color);
     font-family: var(--font-family-medium);
     position: relative;
     padding-left: 25px;
+    transition: color 0.05s ease-in-out;
+    &:hover {
+      color: var(--secondary-500);
+    }
+
+    &:hover :global(.twitter-share-icon) {
+      fill: var(--secondary-500);
+    }
   }
 
 
