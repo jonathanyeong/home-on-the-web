@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col">
     <div class="profile-img__container">
-      <img src="https://res.cloudinary.com/jonathan-yeong/image/upload/v1596067022/personal-blog/profile_pic_alznjm.jpg" alt="jonathan yeong" class="profile-img"/>
+      <img src="https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg" alt="jonathan yeong profile image" class="profile-img"/>
     </div>
   </div>
   <div class="col first-section">
