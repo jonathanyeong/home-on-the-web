@@ -30,6 +30,7 @@ body {
 	background-color: var(--body-bg-color);
 	font-family: var(--font-family-light);
 	margin: 0;
+	transition: color 0.05s ease-in-out;
 }
 
 :root {
@@ -63,6 +64,7 @@ body {
 	--body-text-color: var(--gray-700);
 	--body-bg-color: var(--white-50);
 	--subtitle-text-color: var(--gray-400);
+	--theme-hover-color: var(--primary-400);
 	// Font sizes
 	--big-header: 4.209rem;
 	--heading-one: 3.157rem;
@@ -90,6 +92,7 @@ body {
 	--footer-bg: var(--primary-500);
 	--body-bg-color: var(--primary-600);
 	--subtitle-text-color: var(--gray-200);
+	--theme-hover-color: var(--secondary-400);
 }
 
 .title {

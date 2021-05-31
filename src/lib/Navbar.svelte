@@ -4,11 +4,17 @@
   import MoonIcon from '$lib/icons/MoonIcon.svelte';
   import { page } from '$app/stores';
 
-  function changeTheme() {
-    if (document.documentElement.getAttribute('data-theme', 'dark')) {
+  let darkMode = false;
+  let themeAriaLabel = "Activate Dark Mode";
+  function changeTheme(e) {
+    if (darkMode) {
       document.documentElement.removeAttribute('data-theme', 'dark');
+      darkMode = false;
+      themeAriaLabel = "Activate Dark Mode";
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
+      darkMode = true;
+      themeAriaLabel = "Activate Light Mode";
     }
   }
 </script>
@@ -23,7 +29,14 @@
     <a href="/garden" class:active="{$page.path === '/garden'}" title="Digital Garden">Digital Garden</a>
     <!-- COMING SOON: <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a> -->
     <a href="/about" class:active="{$page.path === '/about'}" title="About">About</a>
-    <button type="button" aria-pressed="true" on:click={changeTheme}><SunIcon /></button>
+    <button class="theme-changer" type="button" aria-label={themeAriaLabel} on:click={changeTheme}>
+      {#if darkMode }
+        <MoonIcon className="theme-icon" />
+      {:else}
+        <SunIcon className="theme-icon" />
+      {/if}
+
+    </button>
   </div>
 </nav>
 
@@ -37,6 +50,20 @@
 
     @media (min-width: 768px) {
       margin-bottom: 48px;
+    }
+  }
+
+  .theme-changer {
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    :global(.theme-icon) {
+      fill: var(--body-text-color);
+    }
+
+    &:hover :global(.theme-icon) {
+      fill: var(--theme-hover-color);
     }
   }
 
