@@ -65,6 +65,9 @@ body {
 	--body-bg-color: var(--white-50);
 	--subtitle-text-color: var(--gray-400);
 	--theme-hover-color: var(--primary-400);
+	--search-bar-bg: var(--white-50);
+	--search-bar-border: var(--gray-300);
+	--search-bar-placeholder: var(--gray-400);
 	// Font sizes
 	--big-header: 4.209rem;
 	--heading-one: 3.157rem;
@@ -93,6 +96,9 @@ body {
 	--body-bg-color: var(--primary-600);
 	--subtitle-text-color: var(--gray-200);
 	--theme-hover-color: var(--secondary-400);
+	--search-bar-bg: var(--primary-500);
+	--search-bar-border: var(--secondary-200);
+	--search-bar-placeholder: var(--white-50);
 }
 
 .title {
