@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Jonathan Yeong | 404 Page</title>
+</svelte:head>
+
 <div class="error-layout">
   <h1 class="title">OH NO!</h1>
 

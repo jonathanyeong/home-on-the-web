@@ -4,6 +4,10 @@
   import YoutubeIcon from '$lib/icons/YoutubeIcon.svelte';
 </script>
 
+<svelte:head>
+	<title>Jonathan Yeong | About Me</title>
+</svelte:head>
+
 <h1 class="title">About Me</h1>
 <div class="row">
   <div class="col">

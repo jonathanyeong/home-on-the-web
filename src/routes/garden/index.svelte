@@ -95,6 +95,9 @@
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
+<svelte:head>
+	<title>Jonathan Yeong | Digital Garden</title>
+</svelte:head>
 
 <h1 class="title">Digital Garden</h1>
 <!-- <p class="h4">

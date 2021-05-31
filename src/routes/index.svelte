@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>Jonathan Yeong's Site</title>
+	<title>Jonathan Yeong</title>
 </svelte:head>
 
 <h1 class="title">Jonathan Yeong</h1>
