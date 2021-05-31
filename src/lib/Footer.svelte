@@ -28,7 +28,7 @@
 		}
   }
   span {
-    color: var(--primary-400);
+    color: var(--heart-accent-color);
   }
 
   p {

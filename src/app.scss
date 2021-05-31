@@ -69,6 +69,7 @@ body {
 	--search-bar-bg: var(--white-50);
 	--search-bar-border: var(--gray-300);
 	--search-bar-placeholder: var(--gray-400);
+	--heart-accent-color: var(--primary-400);
 	// Font sizes
 	--big-header: 4.209rem;
 	--heading-one: 3.157rem;
@@ -87,7 +88,7 @@ body {
 
 [data-theme="dark"] {
 	--body-text-color: var(--white-50);
-	--logo-color: var(--secondary-400);
+	--logo-color: var(--primary-400);
 	--title-color: var(--white-50);
 	--post-card-bg: var(--primary-400);
 	--tag-btn-bg: var(--primary-400);
@@ -99,7 +100,8 @@ body {
 	--theme-hover-color: var(--secondary-400);
 	--search-bar-bg: var(--primary-500);
 	--search-bar-border: var(--secondary-200);
-	--search-bar-placeholder: var(--white-50);
+	--search-bar-placeholder: var(--white);
+	--heart-accent-color: var(--secondary-400);
 }
 
 .title {
