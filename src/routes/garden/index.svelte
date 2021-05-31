@@ -1,14 +1,29 @@
 <script context="module">
+	import Fuse from 'fuse.js'
   export const prerender = true;
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
 
 		if (res.ok) {
 			const { posts, tags } = await res.json();
+			let options = {
+				keys: [
+					{
+						name: "title",
+						weight: 0.3
+					},
+					{
+						name:  "tags",
+						weight: 0.7
+					}]
+			};
+			const postsIndex = Fuse.createIndex(options.keys, posts)
+			const fuse = new Fuse(posts, options, postsIndex);
 			return {
 				props: {
 					posts,
-					tags
+					tags,
+					fuse
 				}
 			};
 		}
@@ -20,19 +35,17 @@
 <script>
 	export let posts;
 	export let tags;
+	export let fuse;
 	import PostCard from '$lib/PostCard.svelte';
 	import TagGroup from '$lib/TagGroup.svelte';
 	import SearchIcon from '$lib/icons/SearchIcon.svelte';
-	import Fuse from 'fuse.js'
 
 	let activeTags = tags;
 	let tagToggle = false;
 	let query = "";
-	let options = { keys: ["title"] };
 	let results = []
-	let formattedResults = posts;
+	let formattedResults = chronologicallySorted(posts);
 	let activeTagPosts = []
-	const fuse = new Fuse(posts, options);
 
   $: if (query !== "") {
 		results = fuse.search(query).map(r => r.item);
@@ -40,11 +53,11 @@
   }
 
 	$: if (query === "" && !tagToggle) {
-		formattedResults = posts;
+		formattedResults = chronologicallySorted(posts);
 	}
 
 	$: if (query === "" && tagToggle) {
-		formattedResults = activeTagPosts;
+		formattedResults = chronologicallySorted(activeTagPosts);
 	}
 
 	function handleTagUpdate(event) {
@@ -58,6 +71,11 @@
 			activeTagPosts = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
 			fuse.setCollection(activeTagPosts);
 		}
+
+		if (query !== "") {
+			results = fuse.search(query).map(r => r.item);
+			formattedResults = results
+		}
 	}
 
 	function handleKeydown(event) {
@@ -67,8 +85,8 @@
 		}
 	}
 
-	$: {
-		formattedResults = formattedResults.sort((a,b) => {
+	function chronologicallySorted(p) {
+		return [...p].sort((a,b) => {
 			const aDate = new Date(a.lastUpdatedDate)
 			const bDate = new Date(b.lastUpdatedDate)
 			return (aDate > bDate) ? -1 : 1
