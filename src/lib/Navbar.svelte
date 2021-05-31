@@ -73,6 +73,7 @@
     cursor: pointer;
     border: none;
     background: none;
+    margin-right: -8px;
 
     :global(.theme-icon) {
       fill: var(--body-text-color);

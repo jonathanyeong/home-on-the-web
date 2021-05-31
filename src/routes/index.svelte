@@ -29,9 +29,9 @@
 
 <h1 class="title">Jonathan Yeong</h1>
 <p class="subtitle h4">
-	Welcome to my home on the web! I’m a backend developer writing about learning, developer growth,
-	and tech I’m currently using. You can also find me on <a class="yt-link header-links" href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA" rel="noopener noreferrer nofollow" target="_blank">Youtube</a>,
-	where I record Elixir tutorials, and connect with me on <a class="twitter-link header-links" href="https://twitter.com/JonoYeong" rel="noopener noreferrer nofollow" target="_blank">Twitter</a>.
+	Hi there! Elixir is my jam. But Ruby and Javascript are my bread and butter.
+	I write about all things developer. Posts in my <a class="garden-link header-links" href="/garden"><span data-content="Digital Garden" aria-hidden="true"></span>Digital Garden</a> are in various stages of done-ness.
+	I upload in-depth tutorials and tech related videos on <a class="yt-link header-links" href="https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA" rel="noopener noreferrer nofollow" target="_blank"><span data-content="Youtube" aria-hidden="true"></span>Youtube</a>.
 </p>
 
 <main>
@@ -66,32 +66,40 @@
 		font-family: var(--font-family-heavy);
 		position: relative;
 		display: inline-block;
-
-		&:before {
-			content:'';
+		span {
 			position: absolute;
-			width: 16px;
-			height: 6px;
-			bottom: 5px;
-		  transition: width 0.3s ease-in-out 0s;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			transform: translateX(-100%);
+			transition: transform 200ms ease;
+
+			&:before {
+				display: inline-block;
+				content: attr(data-content);
+				color: var(--secondary-400);
+				transform: translateX(100%);
+				transition: transform 200ms ease;
+			}
 		}
 
-		&:hover::before {
-			width: 100%;
+		&:hover {
+			span {
+				transform: translateX(0);
+			}
+
+			span::before {
+				transform: translateX(0);
+			}
 		}
 	}
 
 	.yt-link {
-		&:before {
-			background: var(--fiery-rose);
+		span::before {
+			color: var(--fiery-rose);
 		}
 	}
 
-	.twitter-link {
-		&:before {
-			background: var(--twitter-pastel);
-		}
-	}
 	.garden-posts {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
