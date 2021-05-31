@@ -41,9 +41,6 @@
 </div>
 
 <style lang="scss">
-  h1 {
-    color: var(--primary-400);
-  }
   .row {
     display: flex;
     flex-direction: column;

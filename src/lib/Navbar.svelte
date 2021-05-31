@@ -1,6 +1,16 @@
 <script>
   import Logo from './icons/Logo.svelte';
+  import SunIcon from '$lib/icons/SunIcon.svelte';
+  import MoonIcon from '$lib/icons/MoonIcon.svelte';
   import { page } from '$app/stores';
+
+  function changeTheme() {
+    if (document.documentElement.getAttribute('data-theme', 'dark')) {
+      document.documentElement.removeAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }
 </script>
 
 <nav>
@@ -13,6 +23,7 @@
     <a href="/garden" class:active="{$page.path === '/garden'}" title="Digital Garden">Digital Garden</a>
     <!-- COMING SOON: <a href="/tutorials" class:active="{path === '/tutorials'}">Tutorials</a> -->
     <a href="/about" class:active="{$page.path === '/about'}" title="About">About</a>
+    <button type="button" aria-pressed="true" on:click={changeTheme}><SunIcon /></button>
   </div>
 </nav>
 
@@ -30,21 +41,20 @@
   }
 
   .nav-links {
-    a:last-child {
-      margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @media (min-width: 768px) {
+      gap: 24px;
     }
 
     a {
-      color: var(--gray-700);
+      color: var(--body-text-color);
       font-family: var(--font-family-medium);
-      margin-right: 8px;
       display: inline-block;
       text-decoration: none;
       position: relative;
-
-      @media (min-width: 768px) {
-        margin-right: 0.2rem;
-      }
 
       &:before {
         content: '';
@@ -59,10 +69,6 @@
 
       &:hover::before {
         opacity: 1;
-      }
-
-      @media (min-width: 768px) {
-        margin-right: 2rem;
       }
     }
 

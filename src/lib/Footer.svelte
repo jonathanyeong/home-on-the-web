@@ -19,7 +19,7 @@
     margin-top: 44px;
     display: flex;
     flex-direction: column;
-    background-color: var(--wheat);
+    background-color: var(--footer-bg);
     justify-content: flex-end;
     padding: 40px 0 20px;
 
@@ -32,13 +32,12 @@
   }
 
   p {
-    color: var(--gray-700);
     text-align: center;
     margin: 0 0 8px;
   }
 
   :global(.footer-icon) {
-    fill: var(--gray-700);
+    fill: var(--body-text-color);
   }
 
   a {

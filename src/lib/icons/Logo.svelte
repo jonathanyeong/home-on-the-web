@@ -6,7 +6,7 @@
 
 <style lang="scss">
   .logo-icon {
-    fill: var(--primary-400);
+    fill: var(--logo-color);
     width: 44px;
     @media (min-width: 768px) {
       width: 53px;

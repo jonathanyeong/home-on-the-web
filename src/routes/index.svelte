@@ -54,10 +54,10 @@
 	}
 
 	a {
-		color: var(--gray-700);
+		color: var(--body-text-color);
 		text-decoration: none;
 		&:visited {
-			color: var(--gray-700);
+			color: var(--body-text-color);
 			text-decoration: none;
 		}
 	}
@@ -116,9 +116,9 @@
 		font-family: var(--font-family-medium);
 		display: flex;
 		align-items: center;
-		color: var(--gray-700);
+		color: var(--body-text-color);
 		:global(.homepage-arrow) {
-			fill: var(--gray-700);
+			fill: var(--body-text-color);
 		}
 		&:hover > span::before {
 			opacity: 1;

@@ -50,7 +50,7 @@
 	}
 
 	.garden-post-inner {
-		background: var(--white);
+		background: var(--post-card-bg);
 		border: 2px solid var(--primary-400);
 		border-radius: 5px;
 		display: flex;
@@ -79,12 +79,12 @@
 
 	.garden-post-title {
 		font-family: var(--font-family-medium);
-		color: var(--gray-700);
+		color: var(--body-text-color);
 		text-decoration: none;
 	}
 
 	.garden-post-info {
-		color: var(--gray-400);
+		color: var(--subtitle-text-color);
 		font-size: var(--small-text);
 	}
 
