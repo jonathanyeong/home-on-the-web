@@ -4,9 +4,8 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
 <channel>
   <title><![CDATA[Jonathan Yeong's Blog]]></title>
-  <subtitle><![CDATA[A digital garden focused around all things developer]]></subtitle>
-  <link href=${siteUrl} rel="self"/>
-  <link href=${siteUrl}/>
+  <link href="${siteUrl}" rel="self"/>
+  <link href="${siteUrl}" />
   <description><![CDATA[ I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems.]]></description>
   	<author>
 		<name>Jonathan Yeong</name>
@@ -15,7 +14,7 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
   ${posts.map(post => `
       <item>
           <title>${post.title}</title>
-          <link href=${siteUrl}/${post.slug} />
+          <link href="${siteUrl}/${post.slug}" />
           <description><![CDATA[${post.description}]]></description>
           <updated>${new Date(post.lastUpdatedDate).toUTCString()}</updated>
           <pubDate>${new Date(post.createdAtDate).toUTCString()}</pubDate>
