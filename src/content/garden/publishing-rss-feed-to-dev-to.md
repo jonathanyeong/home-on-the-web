@@ -1,7 +1,6 @@
 ---
 createdAtDate: 2020-06-19
 lastUpdatedDate: 2020-06-19
-# hero: "/uploads/publishing-to-rss-feed-to-dev-to-1.png"
 title: "Publishing RSS feed to Dev.to"
 published: true
 tags:

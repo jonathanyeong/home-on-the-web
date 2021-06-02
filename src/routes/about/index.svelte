@@ -54,7 +54,7 @@
   a {
 		text-decoration: none;
 		color: var(--body-text-color);
-		font-family: var(--font-family-medium);
+    font-family: var(--font-family-heavy);
 		transition: color 0.05s ease-in;
 
 		&:hover {

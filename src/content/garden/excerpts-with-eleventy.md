@@ -1,5 +1,6 @@
 ---
-date: 2020-08-28
+createdAtDate: 2020-08-28
+lastUpdatedDate: 2020-08-28
 title: "Excerpts with Eleventy"
 published: true
 tags:

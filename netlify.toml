@@ -2,3 +2,9 @@
   command = "npm run build"
   publish = "build/"
   functions = "functions/"
+[[redirects]]
+  from = "/posts/*"
+  to = "/garden/:splat"
+  status = 301
+  force = false
+  query = {path = ":path"}

@@ -71,6 +71,7 @@ body {
 	--search-bar-border: var(--gray-300);
 	--search-bar-placeholder: var(--gray-400);
 	--heart-accent-color: var(--primary-400);
+	--alert-bg: #FDECC6;
 	// Font sizes
 	--big-header: 4.209rem;
 	--heading-one: 3.157rem;
@@ -78,6 +79,7 @@ body {
 	--heading-three: 1.777rem;
 	--heading-four: 1.333rem;
 	--small-text: 0.88rem;
+	--alert-text: 1.2rem;
 	--body-text: 1rem;
 	// Font families
 	--font-family-heavy: 'AvenirLTPro-Heavy', sans-serif, system-ui;
@@ -237,7 +239,7 @@ code {
 	a {
 		text-decoration: none;
 		color: var(--body-text-color);
-		font-family: var(--font-family-medium);
+		font-family: var(--font-family-heavy);
 		transition: color 0.05s ease-in;
 		&:hover {
 			color: var(--link-hover-color);
@@ -256,9 +258,15 @@ code {
 
 	img {
 		// TODO: Responsive styles
-		max-width: 120%;
-		width: 120%;
-		margin: 0 -10%;
+		max-width: 100%;
+		width: 100%;
+		margin: 0 auto;
+
+		@media (min-width: 768px) {
+			max-width: 120%;
+			width: 120%;
+			margin: 0 -10%;
+		}
 	}
 
 	.anchor {

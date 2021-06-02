@@ -1,12 +1,19 @@
 ---
 createdAtDate: 2020-08-22
-lastUpdatedDate: 2020-08-22
+lastUpdatedDate: 2021-06-01
 title: "Using Github and Notion to organise side projects"
 published: true
 featuredPost: true
 tags:
-- advice
+- automation
 ---
+
+<script>
+  import AlertBox from "$lib/AlertBox.svelte";
+</script>
+
+<AlertBox content="Notion has released an API. I'm working on updating this post to use it!" />
+
 A while ago I posted a question on dev.to asking how people stay [motivated with their side projects](https://dev.to/jonoyeong/how-do-you-stay-motivated-with-your-side-projects-4e59 "motivated with their side projects"). There’s a bunch of great tips on that thread so definitely go check that out! I shared how I stay motivated, and that is by staying organised. Rarely, do I find time to start and finish a project in one session. It’s normally spread over days or weeks. If I’m not organised, I waste a lot of time figuring out what I was doing and what I’m doing next. Curse my terrible memory! Since that post, I’ve started accumulating a backlog of side projects. I still lean heavily on Github to keep my coding projects organised. But I’ve now brought in Notion to help manage ideas at a high level. In this post, I wanted to share how I use these tools to stay on track.
 
 ## Notion

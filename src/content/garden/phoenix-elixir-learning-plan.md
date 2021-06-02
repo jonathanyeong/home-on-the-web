@@ -4,9 +4,7 @@ lastUpdatedDate: 2020-06-26
 title: "Phoenix & Elixir Learning Plan"
 published: true
 tags:
-  - learning
-  - elixir
-  - phoenix
+  - learning plan
 featuredPost: true
 ---
 **Updated: July 17, 2020 - Added another resource**

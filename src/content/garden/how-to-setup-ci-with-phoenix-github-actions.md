@@ -1,11 +1,12 @@
 ---
-date: 2020-07-24
+createdAtDate: 2020-07-24
+lastUpdatedDate: 2020-07-24
 title: "How to setup CI with Phoenix & Github Actions"
 published: true
 featuredPost: true
 tags:
-  - phoenix
   - tutorial
+  - phoenix
 ---
 Continuous Integration (CI) is the act of automating the build and testing of your code when it's committed to version control. For a small app like my blog, I wanted to setup CI without needing to create accounts with [TravisCI](https://travis-ci.org/ "TravisCI") or [CircleCI](https://circleci.com/ "CircleCI"). This is where [Github Actions](https://github.com/features/actions) comes to the rescue. Actions is a workflow automation tool and has a variety of different uses. You could send an SMS, build and push a docker image, run code coverage, and much more. Today, I want to show you how to use Github Actions to setup a CI pipeline for your Phoenix app.
 

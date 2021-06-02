@@ -1,5 +1,6 @@
 ---
-date: 2020-07-09
+createdAtDate: 2020-07-09
+lastUpdatedDate: 2020-07-09
 title: "Building a blog with Phoenix: Getting started"
 published: true
 tags:

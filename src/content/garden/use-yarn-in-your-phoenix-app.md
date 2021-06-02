@@ -1,5 +1,6 @@
 ---
-date: 2020-07-16
+createdAtDate: 2020-07-16
+lastUpdatedDate: 2020-07-16
 title: "Use Yarn in your Phoenix App"
 published: true
 tags:

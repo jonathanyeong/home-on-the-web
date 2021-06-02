@@ -7,7 +7,7 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
   <link>${siteUrl}</link>
   <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
   <pubDate>${new Date("2021-06-01").toUTCString()}</pubDate>
-  <description><![CDATA[ I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems.]]></description>
+  <description><![CDATA[I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems.]]></description>
 
   ${posts.map(post => `
       <item>

@@ -36,7 +36,7 @@
   export let pageUrl;
 
   const { rendered, title, description, tags, createdAtDate, lastUpdatedDate } = post
-  const fullUrl = `https://jonathanyeong.com${pageUrl}`
+  const fullUrl = `https://www.jonathanyeong.com${pageUrl}`
   let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
 
   function readableTags(postTags) {

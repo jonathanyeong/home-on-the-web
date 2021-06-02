@@ -31,16 +31,16 @@
 		flex-direction: column;
 		height: 100vh;
 		justify-content: space-between;
+		padding: 8px;
+
+		@media (min-width: 835px) {
+			padding: 0;
+		}
 	}
 
 	.main-content {
 		max-width: var(--twelve-column-width);
 		width: 100%;
   	margin: 0 auto;
-		padding: 8px;
-
-		@media (min-width: 835px) {
-			padding: 0;
-		}
 	}
 </style>
