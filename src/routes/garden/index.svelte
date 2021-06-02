@@ -4,12 +4,12 @@
 	import metatags from '$lib/stores/metatags';
 	const description = "My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems."
 
-	metatags.title("Jonathan Yeong | Digital Garden");
-	metatags.url("https://www.jonathanyeong.com/garden")
-	metatags.desc(description)
-	metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
+		metatags.title("Jonathan Yeong | Digital Garden");
+		metatags.url("https://www.jonathanyeong.com/garden")
+		metatags.desc(description)
+		metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
 
 		if (res.ok) {
 			const { posts, tags } = await res.json();

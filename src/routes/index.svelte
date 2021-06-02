@@ -2,14 +2,15 @@
 	import metatags from '$lib/stores/metatags';
 	const description = "I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems."
 
-	metatags.title('Jonathan Yeong');
-	metatags.desc(description);
-	metatags.url(`https://www.jonathanyeong.com`);
-	metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
-  export const prerender = true;
+	export const prerender = true;
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
 		const {posts} = await res.json();
+		metatags.title('Jonathan Yeong');
+		metatags.desc(description);
+		metatags.url(`https://www.jonathanyeong.com`);
+		metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
+
 		return {
 			props: {
 				posts: posts,
