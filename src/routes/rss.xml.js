@@ -5,6 +5,7 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 <channel>
   <title><![CDATA[Jonathan Yeong's Blog]]></title>
   <link>${siteUrl}</link>
+  <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
   <pubDate>${new Date("2021-06-01").toUTCString()}</pubDate>
   <description><![CDATA[ I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems.]]></description>
 
