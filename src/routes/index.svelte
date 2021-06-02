@@ -14,6 +14,8 @@
 <script>
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import PostCard from '$lib/PostCard.svelte';
+	import metatags from '$lib/stores/metatags';
+	import { page } from '$app/stores';
 	export let posts = [];
 	let	postList =  posts.filter((p) => p.featuredPost).slice(0,6)
 	postList = postList.sort((a,b) => {
@@ -22,15 +24,15 @@
 		return (aDate > bDate) ? -1 : 1
 	})
 	const description = "I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems."
+
+	metatags.title('Jonathan Yeong');
+	metatags.desc(description);
+	metatags.url($page.host + $page.path);
+
 </script>
 
 <svelte:head>
 	<title>Jonathan Yeong</title>
-	<meta name="description" content="{description}">
-	<meta property="og:title" content="Jonathan Yeong">
-  <meta property="og:url" content="https://www.jonathanyeong.com">
-  <meta property="og:description" content="{description}">
-  <meta property="og:type" content="website">
 	<link rel="canonical" href="https://www.jonathanyeong.com/" />
 </svelte:head>
 
