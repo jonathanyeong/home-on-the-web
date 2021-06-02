@@ -1,9 +1,9 @@
 <script>
+	import metatags from '$lib/stores/metatags';
 	import 'prismjs-tomorrow-theme/prism-tomorrow.css';
 	import '../app.scss';
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
-	import metatags from '$lib/stores/metatags';
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	let onLoad = false;
@@ -14,17 +14,17 @@
 </script>
 
 <svelte:head>
-	<meta property="twitter:creator" content="@JonoYeong" />
-	<meta property="twitter:card" content="summary" />
 	{#each Object.entries($metatags) as [property, content]}
 		{#if content}
-			{#if ['title', 'description'].includes(property)}
+			{#if ['title', 'description', 'image'].includes(property)}
 				<meta name={property} {content} />
 			{:else}
 				<meta {property} {content} />
 			{/if}
 		{/if}
 	{/each}
+	<title>{$metatags.title}</title>
+	<link rel="canonical" href="{$metatags.url}" />
 </svelte:head>
 
 {#if onLoad}
