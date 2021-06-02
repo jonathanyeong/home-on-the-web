@@ -92,12 +92,17 @@
 			return (aDate > bDate) ? -1 : 1
 		})
 	}
+	const description = "My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems."
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
 <svelte:head>
 	<title>Jonathan Yeong | Digital Garden</title>
-	<meta name="description" content="My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems." />
+	<meta name="description" content="{description}" />
+	<meta property="og:title" content="Jonathan Yeong's Digital Garden"/>
+  <meta property="og:url" content="https://www.jonathanyeong.com" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:type" content="website" />
 </svelte:head>
 
 <h1 class="title">Digital Garden</h1>
