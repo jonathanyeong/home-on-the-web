@@ -43,4 +43,10 @@
 		width: 100%;
   	margin: 0 auto;
 	}
+	.footer-container {
+		margin: -8px;
+		@media (min-width: 835px) {
+			margin: 0;
+		}
+	}
 </style>
