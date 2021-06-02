@@ -23,7 +23,7 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 </rss>`;
 
 import plants from './garden/_plants'
-import tutorials from './tutorials/_tutorials'
+// import tutorials from './tutorials/_tutorials'
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
