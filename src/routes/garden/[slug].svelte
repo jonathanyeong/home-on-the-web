@@ -1,6 +1,7 @@
 <script context="module">
   import plants from './_plants';
   export const prerender = true;
+  import metatags from '$lib/stores/metatags';
 
   /**
     * @type {import('@sveltejs/kit').Load}
@@ -11,6 +12,12 @@
     const post = allPlants[slug]
 
     if (post) {
+      const fullUrl = `https://www.jonathanyeong.com${page.path}`
+
+      metatags.title(post.seoTitle || post.title);
+      metatags.desc(post.description);
+      metatags.url(fullUrl);
+      metatags.type('article');
       return {
         props: {
           post,
@@ -35,8 +42,8 @@
   export let post;
   export let pageUrl;
 
-  const { rendered, title, description, tags, createdAtDate, lastUpdatedDate, seoTitle } = post
   const fullUrl = `https://www.jonathanyeong.com${pageUrl}`
+  const { rendered, title, tags, createdAtDate, lastUpdatedDate } = post
   let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
 
   function readableTags(postTags) {
@@ -46,16 +53,6 @@
 		return hashTags.join(', ');
 	}
 </script>
-
-<svelte:head>
-  <title>{seoTitle || title}</title>
-  <meta name="description" content="{description}" />
-  <meta property="og:title" content="{seoTitle || title}"/>
-  <meta property="og:url" content="{fullUrl}" />
-  <meta property="og:description" content="{description}" />
-  <meta property="og:type" content="article" />
-  <link rel="canonical" href="{fullUrl}" />
-</svelte:head>
 
 <div>
   <h1 class="title">{title}</h1>

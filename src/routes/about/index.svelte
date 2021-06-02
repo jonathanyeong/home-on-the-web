@@ -1,15 +1,12 @@
-<script>
+<script context="module">
+  import metatags from '$lib/stores/metatags';
   const description = "A summary of who I am, what this site is, and where my background lies. Continually learning, connecting with, and teaching others is what I find most rewarding"
-</script>
 
-<svelte:head>
-	<title>Jonathan Yeong | About Me</title>
-  <meta name="description" content="{description}" />
-	<meta property="og:title" content="Jonathan Yeong's Digital Garden"/>
-  <meta property="og:url" content="https://www.jonathanyeong.com" />
-  <meta property="og:description" content="{description}" />
-  <meta property="og:type" content="website" />
-</svelte:head>
+	metatags.title("Jonathan Yeong | About Me");
+	metatags.url("https://www.jonathanyeong.com/about")
+	metatags.desc(description)
+  metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
+</script>
 
 <h1 class="title">About Me</h1>
 <div class="row">

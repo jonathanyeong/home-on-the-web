@@ -1,8 +1,16 @@
 <script context="module">
-  export const prerender = true;
+	import metatags from '$lib/stores/metatags';
+	const description = "I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems."
+
+	export const prerender = true;
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
 		const {posts} = await res.json();
+		metatags.title('Jonathan Yeong');
+		metatags.desc(description);
+		metatags.url(`https://www.jonathanyeong.com`);
+		metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
+
 		return {
 			props: {
 				posts: posts,
@@ -14,6 +22,7 @@
 <script>
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import PostCard from '$lib/PostCard.svelte';
+
 	export let posts = [];
 	let	postList =  posts.filter((p) => p.featuredPost).slice(0,6)
 	postList = postList.sort((a,b) => {
@@ -21,18 +30,7 @@
 		const bDate = new Date(b.lastUpdatedDate)
 		return (aDate > bDate) ? -1 : 1
 	})
-	const description = "I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems."
 </script>
-
-<svelte:head>
-	<title>Jonathan Yeong</title>
-	<meta name="description" content="{description}">
-	<meta property="og:title" content="Jonathan Yeong">
-  <meta property="og:url" content="https://www.jonathanyeong.com">
-  <meta property="og:description" content="{description}">
-  <meta property="og:type" content="website">
-	<link rel="canonical" href="https://www.jonathanyeong.com/" />
-</svelte:head>
 
 <h1 class="title">Jonathan Yeong</h1>
 <p class="subtitle h4">

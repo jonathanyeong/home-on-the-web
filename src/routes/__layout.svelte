@@ -1,4 +1,5 @@
 <script>
+	import metatags from '$lib/stores/metatags';
 	import 'prismjs-tomorrow-theme/prism-tomorrow.css';
 	import '../app.scss';
 	import Navbar from '$lib/Navbar.svelte';
@@ -11,6 +12,20 @@
 		setTimeout(() => onLoad = true, 50)
 	});
 </script>
+
+<svelte:head>
+	{#each Object.entries($metatags) as [property, content]}
+		{#if content}
+			{#if ['title', 'description', 'image'].includes(property)}
+				<meta name={property} {content} />
+			{:else}
+				<meta {property} {content} />
+			{/if}
+		{/if}
+	{/each}
+	<title>{$metatags.title}</title>
+	<link rel="canonical" href="{$metatags.url}" />
+</svelte:head>
 
 {#if onLoad}
 	<div class="container">

@@ -1,8 +1,15 @@
 <script context="module">
 	import Fuse from 'fuse.js'
   export const prerender = true;
+	import metatags from '$lib/stores/metatags';
+	const description = "My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems."
+
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
+		metatags.title("Jonathan Yeong | Digital Garden");
+		metatags.url("https://www.jonathanyeong.com/garden")
+		metatags.desc(description)
+		metatags.image("https://res.cloudinary.com/jonathan-yeong/image/upload/v1622474271/personal-blog/profile_pic_minified_svw9cq.jpg");
 
 		if (res.ok) {
 			const { posts, tags } = await res.json();
@@ -92,18 +99,9 @@
 			return (aDate > bDate) ? -1 : 1
 		})
 	}
-	const description = "My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems."
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
-<svelte:head>
-	<title>Jonathan Yeong | Digital Garden</title>
-	<meta name="description" content="{description}" />
-	<meta property="og:title" content="Jonathan Yeong's Digital Garden"/>
-  <meta property="og:url" content="https://www.jonathanyeong.com" />
-  <meta property="og:description" content="{description}" />
-  <meta property="og:type" content="website" />
-</svelte:head>
 
 <h1 class="title">Digital Garden</h1>
 <!-- <p class="h4">
