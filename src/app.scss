@@ -63,6 +63,7 @@ body {
 	--tag-btn-bg-hover-text: var(--white);
 	--footer-bg: var(--wheat);
 	--body-text-color: var(--gray-700);
+	--link-hover-color: var(--primary-400);
 	--body-bg-color: var(--white-50);
 	--subtitle-text-color: var(--gray-500);
 	--theme-hover-color: var(--primary-400);
@@ -88,6 +89,7 @@ body {
 
 [data-theme="dark"] {
 	--body-text-color: var(--white-50);
+	--link-hover-color: var(--secondary-500);
 	--logo-color: var(--primary-400);
 	--title-color: var(--white-50);
 	--post-card-bg: var(--primary-400);
@@ -238,7 +240,7 @@ code {
 		font-family: var(--font-family-medium);
 		transition: color 0.05s ease-in;
 		&:hover {
-			color: var(--secondary-500);
+			color: var(--link-hover-color);
 		}
 	}
 

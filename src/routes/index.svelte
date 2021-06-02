@@ -29,7 +29,7 @@
 
 <h1 class="title">Jonathan Yeong</h1>
 <p class="subtitle h4">
-	Hi there! Elixir is my jam. But Ruby and Javascript are my bread and butter.
+	Hi there!
 	I write about all things developer. Posts in my <a class="garden-link header-links" href="/garden"><span data-content="Digital Garden" aria-hidden="true"></span>Digital Garden</a> are in various stages of done-ness.
 	I upload in-depth tutorials and tech related videos on <a class="yt-link header-links" href="https://www.youtube.com/c/jonathanyeong" rel="noopener noreferrer nofollow" target="_blank"><span data-content="Youtube" aria-hidden="true"></span>Youtube</a>.
 </p>

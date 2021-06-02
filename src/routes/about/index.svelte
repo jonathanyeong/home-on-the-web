@@ -16,35 +16,56 @@
     </div>
   </div>
   <div class="col first-section">
-    <h2>Hi There!</h2>
-
+    <h2>Who am I? What is this site?</h2>
     <p>
-      My name is Jonathan, I'm a software engineer originally from Australia, currently based in the United States.
-    </p>
-    <p>
-      My web development career started with Ruby and Ruby on Rails. Previously, I was an iOS developer, and learning Ruby/Rails made
-      me appreciate the focus on developer experience. The time it took to get a web app up and running blew my mind! But I
-      quickly succumbed to the flexibility and lack of guard rails (heh). I remember for one of my early projects, I leaned into
-      nested resources. Maybe a little too hard. The app became incredibly hard to debug and eventually I abandoned it and started again.
-    </p>
+      I’m a senior developer at Shopify, originally from Australia, currently living in Seattle. This site is my digital garden, filled with a mix of half-baked ideas.
+      And more rarely, concrete articles. It’s inspired by Maggie Appleton, who did an amazing dive into the <a href="https://maggieappleton.com/garden-history" target="_blank" rel="noopener">history of digital gardens</a>.
+      Highly recommend reading it! In my garden, I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems.
+      While I love exploring new things, I’m a Rubyist at heart.
   </div>
 </div>
 <div class="row">
   <div class="col second-section">
-    <h2>What I'm up to now</h2>
+    <h2>Ruby on Rails & Community</h2>
     <p>
-      Since that time, I worked at a digital agency, freelanced, and moved to the US to work at a fin-tech company.
-      Most recently I worked at Highspot, a sales enablement startup. I strive to deliver maintainable solutions to products
-      at scale. I love mentoring and contributing to the growth of the team around me.
+      I got my start in web development using Ruby on Rails in 2015. It was the first time I’ve used Ruby, my first framework, and my first web application. The learning curve was steep. I remember following a tutorial, early on, where I created a blog. My first thought was, “this shit is magic”. My second thought was, “I’m so screwed if anything breaks”.
+      Being on the only other developer at that company, I struggled. I should’ve asked more questions than I did, but the huge reason I was able to push through was because of community. During that time I joined the Ruby and CodeNewbie community, I finally felt like I belonged. It was a place to share wins and struggles with others at a similar stage.
+      This experience has shaped how I view being a programmer. Continually learning, connecting with, and teaching others is what I find most rewarding.
     </p>
+
     <p>
-      This website is where I'll write about Elixir, Ruby, JavaScript, and other thoughts on web development. I also
-      have a newsletter and a YouTube channel where I dive into developer growth and processes.
+      I hope you enjoy the articles on this site! If you want to put a voice behind these words.
+      I’ve also started a <a href="https://www.youtube.com/c/jonathanyeong" rel="noopener noreferrer nofollow" target="_blank">YouTube channel</a>,
+      where I upload in-depth tutorials and general developer advice. Feel free to connect with me on <a href="https://twitter.com/JonoYeong" rel="noopener noreferrer nofollow" target="_blank">Twitter</a>,
+      or find me kicking around in the <a href="https://virtualcoffee.io/" rel="noopener" target="_blank">Virtual Coffee community</a>.
     </p>
+
+    <h2>Speaker Bio</h2>
+    <p>
+      Jonathan Yeong is a senior developer at Shopify. Being from Australia, he often goes by Jono. A Rubyist at heart, he blogs and produces videos about all things programming. He’s passionate about the human connections in technology. And believes that being part of a community, a mentor, and a teacher is one of the most rewarding things you can do.
+    </p>
+
+    <h2>Most Recent Talk</h2>
+    <p><a href="https://www.youtube.com/watch?v=iNbqpT0elbA&list=PL2yVnDETvO-pXF_Twt2I-lY9-1VratInb&index=1" target="_blank" rel="noopener noreferrer nofollow">Elixir Conf 2020 - Deep Dive into Elixir</a></p>
   </div>
 </div>
 
 <style lang="scss">
+  a {
+		text-decoration: none;
+		color: var(--body-text-color);
+		font-family: var(--font-family-medium);
+		transition: color 0.05s ease-in;
+
+		&:hover {
+			color: var(--link-hover-color);
+		}
+	}
+
+  p {
+    margin-top: 0;
+  }
+
   .row {
     display: flex;
     flex-direction: column;
@@ -82,44 +103,5 @@
         margin-left: 32px;
       }
    }
-  }
-
-  .second-section {
-    flex: 3;
-  }
-
-  .connect-with-me {
-    flex: 1;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-  }
-
-  li {
-    margin-left: 8px;
-    margin-right: 8px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  :global(.about-icon) {
-    fill: var(--gray-700);
-  }
-
-  a {
-    transition: opacity 0.02s;
-
-    &:hover {
-      opacity: 0.7;
-    }
   }
 </style>
