@@ -10,7 +10,7 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 
   ${posts.map(post => `
       <item>
-          <title>${post.title}</title>
+          <title><![CDATA[${post.title}]]></title>
           <link>${siteUrl}/${post.slug}</link>
           <description><![CDATA[${post.description}]]></description>
           <pubDate>${new Date(post.createdAtDate).toUTCString()}</pubDate>
