@@ -2,6 +2,7 @@
 createdAtDate: 2020-07-09
 lastUpdatedDate: 2020-07-09
 title: "Building a blog with Phoenix: Getting started"
+description: "The first installment of a tutorial to get a blog up and running with Phoenix. Inspired by the Ruby on Rails tutorails on getting a blog running"
 published: true
 tags:
 - tutorial

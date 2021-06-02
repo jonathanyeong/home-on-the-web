@@ -2,6 +2,7 @@
 createdAtDate: 2020-07-16
 lastUpdatedDate: 2020-07-16
 title: "Use Yarn in your Phoenix App"
+description: "Quick tutorial on using Yarn instead of webpack in your Phoenix app"
 published: true
 tags:
 - phoenix

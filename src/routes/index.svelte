@@ -25,7 +25,7 @@
 
 <svelte:head>
 	<title>Jonathan Yeong</title>
-	<meta name="description" content=" I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems.">
+	<meta name="description" content="I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems." />
 	<link rel="canonical" href="https://www.jonathanyeong.com/" />
 </svelte:head>
 

@@ -2,6 +2,7 @@
 createdAtDate: 2020-08-28
 lastUpdatedDate: 2020-08-28
 title: "Excerpts with Eleventy"
+description: "A tutorial on getting excerpts into 11ty."
 published: true
 tags:
 - tutorial

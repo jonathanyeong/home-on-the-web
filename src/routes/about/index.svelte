@@ -1,11 +1,7 @@
-<script>
-  import MailIcon from '$lib/icons/MailIcon.svelte';
-  import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
-  import YoutubeIcon from '$lib/icons/YoutubeIcon.svelte';
-</script>
 
 <svelte:head>
 	<title>Jonathan Yeong | About Me</title>
+  <meta name="description" content="A summary of who I am, what this site is, and where my background lies. Continually learning, connecting with, and teaching others is what I find most rewarding" />
 </svelte:head>
 
 <h1 class="title">About Me</h1>
@@ -36,7 +32,7 @@
     <p>
       I hope you enjoy the articles on this site! If you want to put a voice behind these words.
       I’ve also started a <a href="https://www.youtube.com/c/jonathanyeong" rel="noopener noreferrer nofollow" target="_blank">YouTube channel</a>,
-      where I upload in-depth tutorials and general developer advice. Feel free to connect with me on <a href="https://twitter.com/JonoYeong" rel="noopener noreferrer nofollow" target="_blank">Twitter</a>,
+      where I upload in-depth tutorials and general developer advice. Feel free to connect with me on <a href="https://twitter.com/JonoYeong" rel="noopener noreferrer nofollow" data-dnt="true" target="_blank">Twitter</a>,
       or find me kicking around in the <a href="https://virtualcoffee.io/" rel="noopener" target="_blank">Virtual Coffee community</a>.
     </p>
 

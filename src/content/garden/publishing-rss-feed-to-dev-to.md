@@ -2,6 +2,7 @@
 createdAtDate: 2020-06-19
 lastUpdatedDate: 2020-06-19
 title: "Publishing RSS feed to Dev.to"
+description: "A tutorial on getting your RSS feed published to Dev.to"
 published: true
 tags:
 - tutorial

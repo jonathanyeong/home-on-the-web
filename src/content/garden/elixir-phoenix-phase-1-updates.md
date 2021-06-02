@@ -2,6 +2,7 @@
 createdAtDate: 2020-07-02
 lastUpdatedDate: 2020-07-02
 title: "Elixir & Phoenix: Phase 1 updates"
+description: "A few updates while working through my Elixir & Phoenix learning plan"
 published: true
 featuredPost: true
 tags:

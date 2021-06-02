@@ -97,6 +97,7 @@
 <svelte:window on:keydown={handleKeydown}/>
 <svelte:head>
 	<title>Jonathan Yeong | Digital Garden</title>
+	<meta name="description" content="My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems." />
 </svelte:head>
 
 <h1 class="title">Digital Garden</h1>

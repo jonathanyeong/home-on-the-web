@@ -35,7 +35,7 @@
   export let post;
   export let pageUrl;
 
-  const { rendered, title, description, tags, createdAtDate, lastUpdatedDate } = post
+  const { rendered, title, description, tags, createdAtDate, lastUpdatedDate, seoTitle } = post
   const fullUrl = `https://www.jonathanyeong.com${pageUrl}`
   let encodedShareUrl = encodeURI(`https://twitter.com/intent/tweet?text=${title} by @jonoyeong ${fullUrl}`)
 
@@ -48,8 +48,9 @@
 </script>
 
 <svelte:head>
-	<title>{title}</title>
-  <meta property="og:title" content="{title}"/>
+  <title>{seoTitle || title}</title>
+  <meta name="description" content="{description}" />
+  <meta property="og:title" content="{seoTitle || title}"/>
   <meta property="og:url" content="{fullUrl}" />
   <meta property="og:description" content="{description}" />
   <meta property="og:type" content="article" />
@@ -72,7 +73,7 @@
       </article>
   {/key}
   <hr />
-  <p class="twitter-share-container">Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}" data-dnt="true" class="twitter-share-link"><TwitterIcon className="twitter-share-icon" /> Twitter</a></p>
+  <p class="twitter-share-container">Liked this post? Share it on <a target="_blank" href="{encodedShareUrl}" data-dnt="true" class="twitter-share-link" rel="noopener noreferrer nofollow"><TwitterIcon className="twitter-share-icon" /> Twitter</a></p>
 </div>
 
 <style lang="scss">

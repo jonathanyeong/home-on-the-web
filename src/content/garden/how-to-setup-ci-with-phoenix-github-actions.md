@@ -2,6 +2,7 @@
 createdAtDate: 2020-07-24
 lastUpdatedDate: 2020-07-24
 title: "How to setup CI with Phoenix & Github Actions"
+description: "Tutorial on getting CI set up with Phoenix and Github Actions. Tests are automatically run anytime you push a commit to Github."
 published: true
 featuredPost: true
 tags:
