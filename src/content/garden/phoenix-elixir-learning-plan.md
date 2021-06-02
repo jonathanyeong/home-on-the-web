@@ -1,7 +1,7 @@
 ---
 createdAtDate: 2020-06-26
 lastUpdatedDate: 2020-06-26
-title: "Phoenix & Elixir Learning Plan"
+title: "Phoenix and Elixir Learning Plan"
 description: "A learning plan for someone who wants to learn Phoenix and Elixir. Assumes you know about variables, loops, but this is your first language"
 published: true
 tags:
