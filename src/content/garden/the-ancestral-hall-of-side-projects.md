@@ -6,7 +6,7 @@ seoTitle: The Ancestral Hall of Side Projects
 published: true
 description: Sharing my experience and insecurities as I'm deleting neglected side projects. As I do, I realize that they're all a learning experience. I'm never starting from scratch.
 tags:
-  - opinion
+  - learning
 featuredPost: true
 ---
 
