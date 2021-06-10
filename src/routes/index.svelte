@@ -1,8 +1,8 @@
 <script context="module">
+	export const prerender = true;
 	import metatags from '$lib/stores/metatags';
 	const description = "I write about a variety topics around being a developer. With technical articles focused around Ruby, Elixir, Javascript, and their respective ecosystems."
 
-	export const prerender = true;
 	export async function load({ fetch }) {
 		const res = await fetch('/garden.json');
 		const {posts} = await res.json();

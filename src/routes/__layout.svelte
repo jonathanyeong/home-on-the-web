@@ -27,20 +27,21 @@
 	<link rel="canonical" href="{$metatags.url}" />
 </svelte:head>
 
-{#if onLoad}
-	<div class="container">
-		<div class="main-content" in:fly="{{ y: 100, duration: 200 }}">
-			<Navbar />
-			<slot />
-		</div>
-		<div class="footer-container">
-			<Footer />
-		</div>
+<div class="container {onLoad ? '' : 'loading'}">
+	<div class="main-content" >
+		<Navbar />
+		<slot />
 	</div>
+	<div class="footer-container">
+		<Footer />
+	</div>
+</div>
 
-{/if}
 
 <style lang="scss">
+	.container.loading {
+		visibility: hidden;
+	}
 	.container {
 		display: flex;
 		flex-direction: column;
