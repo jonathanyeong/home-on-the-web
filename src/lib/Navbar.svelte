@@ -6,7 +6,10 @@
 
   let darkMode = false;
   let themeAriaLabel = "Activate Dark Mode";
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  let currentTheme = null;
+  if (typeof window !== 'undefined') {
+    currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  }
 
   if (currentTheme) {
     if (currentTheme === 'dark') {
