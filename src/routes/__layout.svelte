@@ -1,6 +1,6 @@
 <script>
 	import 'prismjs-tomorrow-theme/prism-tomorrow.css';
-	import './_global.css';
+	import './_global.scss';
 	import './_navbar.scss';
 	import metatags from '$lib/stores/metatags';
 	import Navbar from '$lib/Navbar.svelte';
@@ -38,9 +38,6 @@
     @import '_prose.scss';
 	}
 
-	.container.loading {
-		visibility: hidden;
-	}
 	.container {
 		display: flex;
 		flex-direction: column;
