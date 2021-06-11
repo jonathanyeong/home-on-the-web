@@ -1,16 +1,10 @@
 <script>
-	import metatags from '$lib/stores/metatags';
 	import 'prismjs-tomorrow-theme/prism-tomorrow.css';
-	import '../app.scss';
+	import './_global.css';
+	import metatags from '$lib/stores/metatags';
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import { fly } from 'svelte/transition';
-	import { onMount } from 'svelte';
-	let onLoad = false;
-
-	onMount(() => {
-		setTimeout(() => onLoad = true, 50)
-	});
 </script>
 
 <svelte:head>
@@ -27,7 +21,7 @@
 	<link rel="canonical" href="{$metatags.url}" />
 </svelte:head>
 
-<div class="container {onLoad ? '' : 'loading'}">
+<div class="container" in:fly="{{ y: 100, duration: 200 }}">
 	<div class="main-content" >
 		<Navbar />
 		<slot />
@@ -39,6 +33,10 @@
 
 
 <style lang="scss">
+	:global {
+    @import '_prose.scss';
+	}
+
 	.container.loading {
 		visibility: hidden;
 	}

@@ -119,6 +119,4 @@
       fill: var(--secondary-500);
     }
   }
-
-
 </style>
