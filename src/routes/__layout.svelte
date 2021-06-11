@@ -1,6 +1,7 @@
 <script>
 	import 'prismjs-tomorrow-theme/prism-tomorrow.css';
 	import './_global.css';
+	import './_navbar.scss';
 	import metatags from '$lib/stores/metatags';
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
