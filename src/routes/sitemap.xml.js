@@ -8,18 +8,18 @@ const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.jonathanyeong.com/about</loc>
+    <loc>https://www.jonathanyeong.com/about/</loc>
     <lastmod>${new Date("2021-06-02").toISOString()}</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.jonathanyeong.com/garden</loc>
+    <loc>https://www.jonathanyeong.com/garden/</loc>
     <lastmod>2021-06-02</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   ${posts.map(post => `
     <url>
-      <loc>https://www.jonathanyeong.com/garden/${post.slug}</loc>
+      <loc>https://www.jonathanyeong.com/garden/${post.slug}/</loc>
       <lastmod>${new Date(post.lastUpdatedDate).toISOString()}</lastmod>
       <changefreq>monthly</changefreq>
     </url>
