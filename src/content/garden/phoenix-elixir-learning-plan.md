@@ -10,7 +10,7 @@ featuredPost: true
 ---
 **Updated: July 17, 2020 - Added another resource**
 
-I recently wrote about my [experience playing around with Phoenix and Elixir for the first time](https://www.jonathanyeong.com/posts/first-impressions-of-phoenix-framework/). Looking back on that experience, I copied a lot of code without fully understanding how things worked. Not knowing how things work is less than ideal. Because of this, I want to go back and take a more structured approach with learning Phoenix and Elixir. Which led me to make this learning plan! Below is what I think will be a good flow to help guide self-learning. I want to have achieved three things by the end of this plan:
+I recently wrote about my [experience playing around with Phoenix and Elixir for the first time](/garden/first-impressions-of-phoenix-framework/). Looking back on that experience, I copied a lot of code without fully understanding how things worked. Not knowing how things work is less than ideal. Because of this, I want to go back and take a more structured approach with learning Phoenix and Elixir. Which led me to make this learning plan! Below is what I think will be a good flow to help guide self-learning. I want to have achieved three things by the end of this plan:
 
 * Have a good grasp on Elixir and Functional programming fundamentals.
 * Be able to ship an application written in Phoenix to production.
@@ -26,7 +26,7 @@ The [Phoenix installation page](https://hexdocs.pm/phoenix/installation.html#con
 
 ## Phase 1: Build a simple CRUD app
 
-[**Addendum**](https://www.jonathanyeong.com/posts/elixir-phoenix-phase-1-updates/ "Phase 1 Addendum")
+[**Addendum**](/garden/elixir-phoenix-phase-1-updates/ "Phase 1 Addendum")
 
 Some examples of CRUD apps are: a todo list, a blog, twitter clone. Ideally anything data you want to save, edit, or delete from a database. For this phase, aim to build a very small part of the app. For example, get something saving and be able to display it on the page.
 

@@ -35,9 +35,9 @@
 
     <p>
       I hope you enjoy the articles on this site! If you want to put a voice behind these words.
-      I’ve also started a <a href="https://www.youtube.com/c/jonathanyeong" rel="noopener noreferrer nofollow" target="_blank">YouTube channel</a>,
-      where I upload in-depth tutorials and general developer advice. Feel free to connect with me on <a href="https://twitter.com/JonoYeong" rel="noopener noreferrer nofollow" data-dnt="true" target="_blank">Twitter</a>,
-      or find me kicking around in the <a href="https://virtualcoffee.io/" rel="noopener" target="_blank">Virtual Coffee community</a>.
+      I’ve also started a <a href="https://www.youtube.com/c/jonathanyeong" rel="noopener noreferrer nofollow external" target="_blank">YouTube channel</a>,
+      where I upload in-depth tutorials and general developer advice. Feel free to connect with me on <a href="https://twitter.com/JonoYeong" rel="noopener noreferrer nofollow external" data-dnt="true" target="_blank">Twitter</a>,
+      or find me kicking around in the <a href="https://virtualcoffee.io/" rel="noopener external" target="_blank">Virtual Coffee community</a>.
     </p>
 
     <h2>Speaker Bio</h2>
@@ -46,7 +46,7 @@
     </p>
 
     <h2>Most Recent Talk</h2>
-    <p><a href="https://www.youtube.com/watch?v=iNbqpT0elbA&list=PL2yVnDETvO-pXF_Twt2I-lY9-1VratInb&index=1" target="_blank" rel="noopener noreferrer nofollow">Elixir Conf 2020 - Deep Dive into Elixir</a></p>
+    <p><a href="https://www.youtube.com/watch?v=iNbqpT0elbA&list=PL2yVnDETvO-pXF_Twt2I-lY9-1VratInb&index=1" target="_blank" rel="noopener noreferrer nofollow external">Elixir Conf 2020 - Deep Dive into Elixir</a></p>
   </div>
 </div>
 
