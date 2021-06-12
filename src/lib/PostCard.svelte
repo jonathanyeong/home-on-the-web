@@ -15,7 +15,7 @@
 <article class="garden-post">
   <a sveltekit:prefetch href="/garden/{slug}" class="garden-post-inner">
     <span class="garden-post-info"><time datetime="{htmlDate(lastUpdatedDate)}">{readableDate(lastUpdatedDate)}</time></span>
-    <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}">{title}</span>
+    <span sveltekit:prefetch class="h4 garden-post-title" href="/garden/{slug}/">{title}</span>
 		<span class="garden-post-info garden-post-tags">{readableTags(tags)}</span>
 	</a>
 </article>
