@@ -10,7 +10,7 @@ tags:
 - elixir
 - phoenix
 ---
-Last week I wrote up a [learning plan](https://www.jonathanyeong.com/posts/phoenix-elixir-learning-plan/) for Phoenix & Elixir. In this post, I wanted to add an addendum to phase 1 of the plan and give a quick progress update.
+Last week I wrote up a [learning plan](/garden/phoenix-elixir-learning-plan/) for Phoenix & Elixir. In this post, I wanted to add an addendum to phase 1 of the plan and give a quick progress update.
 
 ## Addendum
 
