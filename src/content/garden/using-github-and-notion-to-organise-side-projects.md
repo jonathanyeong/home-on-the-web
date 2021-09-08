@@ -4,7 +4,7 @@ lastUpdatedDate: 2021-06-01
 title: "Using Github and Notion to organise side projects"
 description: "A piece about how I use Github and Notion together to organise side projects"
 published: true
-featuredPost: true
+featuredPost: false
 tags:
 - automation
 ---
