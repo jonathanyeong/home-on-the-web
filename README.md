@@ -2,7 +2,14 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d6e74da5-c5f3-480b-8ae7-c7706679401c/deploy-status)](https://app.netlify.com/sites/elastic-engelbart-26e6d9/deploys)
 
-Built with SvelteKit and deployed on Netlify. This project is my blog/digital garden found [here](https://jonathanyeong.com). This repo is a learning project so it might not be the best svelte code. If you see something particularly egregious feel free to create an issue, or reach out to me on Twitter!
+Built with SvelteKit and deployed on Netlify. This project is my blog/digital garden found [here](https://jonathanyeong.com). This repo is a learning project so it might not be the best svelte code. If you see something particularly egregious feel free to [create an issue](https://github.com/jonathanyeong/home-on-the-web/issues/new), or reach out to me on [Twitter](https://twitter.com/JonoYeong)!
+
+## Features
+
+- Ability to filter based on tags of a post. Filtering respects the current search objects.
+- Search provided via Fuse.js
+- Dark/Light theme
+- Netlify Deploy Previews to share draft links
 
 ## Getting started
 
@@ -13,6 +20,13 @@ git clone git@github.com:jonathanyeong/home-on-the-web.git
 cd home-on-the-web
 npm install
 npm run dev
+```
+
+If you wanted to build the site on your local machine and emulate what it would look like in production:
+
+```
+npm build
+npm run preview
 ```
 
 ## Project Breakdown
