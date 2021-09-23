@@ -28,7 +28,7 @@ If this sounds like you, then I have one tip. Don’t use colours! At least not 
 
 Every layout should have a big, medium, and small element (or elements). Having contrasting sizes helps draw your eye to certain parts of the design. And it makes your design more dynamic. Here’s an example with circles.
 
-![](https://res.cloudinary.com/jonathan-yeong/image/upload/v1596159546/personal-blog/Frame_11_leskj6.png)
+![Layout based on sizes using circles as an example](https://res.cloudinary.com/jonathan-yeong/image/upload/v1596159546/personal-blog/Frame_11_leskj6.png)
 
 On the left, your eyes naturally goes top down. But on the right they start in the middle, go to the top, then to the bottom. You can use different sized elements to really highlight what you think is important. It also helps provide balance to your page. Following this rule, has changed my mindset from treating each shape individually to understanding how they interact with each other.
 
@@ -51,7 +51,7 @@ At some point, you’ll need to add colour to your design. Normally the first st
 
 Columns are part of a visual layout called a grid, by leaning on columns placing elements becomes much simpler. Using columns in Figma looks like this:
 
-![](https://res.cloudinary.com/jonathan-yeong/image/upload/v1596159556/personal-blog/Screen_Shot_2020-07-30_at_4.12.03_PM_xztwhb.png)
+![Figma Column layout](https://res.cloudinary.com/jonathan-yeong/image/upload/v1596159556/personal-blog/Screen_Shot_2020-07-30_at_4.12.03_PM_xztwhb.png)
 
 A good rule of thumb is to use 12 columns on desktop, 8 on tablet, and 4 on mobile. Having an even number of columns gives you more flexibility when placing smaller elements. The space between the columns is called the gutter. It’s important to not leave an element in the gutter. By keeping items inside the columns you have an easier time with alignment.
 
@@ -66,7 +66,7 @@ My final tip is to be intentional and consistent with your design. Consistency i
 
 Being intentional is really about providing the user context. If you don’t know why you’re doing something in your design, then the user isn’t going to know either. Personally, I think the reason has to be more than “it looks cool”. I realised how important this was when I showed someone my design below. I was super proud of the blobs and thought they looked really cool. But the feedback I got was “why are there random blobs on the page?”.
 
-![](https://res.cloudinary.com/jonathan-yeong/image/upload/v1596159591/personal-blog/Screen_Shot_2020-07-30_at_3.43.38_PM_jhje4f.png)
+![Old design showing random blobs](https://res.cloudinary.com/jonathan-yeong/image/upload/v1596159591/personal-blog/Screen_Shot_2020-07-30_at_3.43.38_PM_jhje4f.png)
 
 I had no answer to that question. It made me rethink what I wanted to show vs what the user was actually seeing.   With these two ideas in mind you have a guide anytime you need to make a decision.
 

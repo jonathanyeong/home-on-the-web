@@ -25,9 +25,11 @@ npm run dev
 If you wanted to build the site on your local machine and emulate what it would look like in production:
 
 ```
-npm build
+npm run build
 npm run preview
 ```
+
+*Note:* running build will also output any warnings from compiling Svelte.
 
 ## Project Breakdown
 
