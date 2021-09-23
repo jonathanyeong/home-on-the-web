@@ -23,25 +23,11 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 </rss>`;
 
 import plants from './garden/_plants'
-// import tutorials from './tutorials/_tutorials'
-
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
 export async function get() {
   const allPlants = await plants();
-  // const allTutorials = await tutorials();
-  // const allContent = {...allPlants, ...allTutorials}
-
-  // const posts = Object.values(allPlants).map((slug) => {
-  //   return {
-  //       title: allContent[slug].title,
-  //       date: allContent[slug].date,
-  //       description: allContent[slug].description,
-  //       slug: slug,
-  //     };
-  // })
-
   const feed = renderXmlRssFeed(Object.values(allPlants));
 
 
