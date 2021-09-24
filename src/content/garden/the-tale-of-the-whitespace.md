@@ -13,7 +13,6 @@ featuredPost: true
   import AlertBox from "$lib/AlertBox.svelte";
 </script>
 
-<AlertBox content="Actively working on this post. If you want to solve your unicode whitespace woes read on!" />
 
 Can you tell the difference between " " and " "? I certainly can't. But the computer can.
 
@@ -49,6 +48,8 @@ UTF-32 → Codepoint U+0041 → 00000000 00000000 00000000 01000001 → A
 Note: Unicode codepoints are represented via a `U+` and the hexidecimal value. Using a function like `.ord` will convert that codepoint to a decimal.
 
 What if we want to switch the encoding between unicode to ASCII or some other format? What happens when we can't do this encoding?
+
+<AlertBox content="Below here is a WIP!" />
 
 ## Transforming Unicode to ASCII
 The particular two codepoints represented above are 32 for an ASCII space and 160 for a non-breaking space. Let's say that I wanted to transliterate a string. Transliteration means to swap characters with something that looks similar. It does not take into account sound. E.g. transliterating `é` will give `e`.
