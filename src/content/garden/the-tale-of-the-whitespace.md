@@ -35,17 +35,18 @@ If we have something like ASCII doing this for us already, why do we need someth
 
 ASCII being a 7 bit encoding structure within an 8-bit byte could only represent 256 characters. The Unicode standard introduced three new encoding forms, UTF-8, UTF-16, UTF-32. Each of these encoding forms are interchangeable and they all extend the original ASCII encoding. UTF-8 is the most widely seen encoding format. It represents a string in a variable amount of 8 bit bytes, from one to four. If we were representing an ASCII character say `A` in Unicode we would have:
 
-ASCII → Codepoint 65 → 01000001 → A
-
-UTF-8 → Codepoint U+0041 → 01000001 → A
-
-UTF-16 → Codepoint U+0041 → 00000000 01000001 → A
-
-UTF-32 → Codepoint U+0041 → 00000000 00000000 00000000 01000001 → A
+| Encoding | Codepoint | Binary Representation | Character |
+|----------|-----------|-----------------------|-----------|
+| ASCII | 65 | 01000001 | A |
+| UTF-8 | U+0041 | 01000001 | A |
+| UTF-16 | U+0041 | 00000000 01000001 | A |
+| UTF-32 | U+0041 | 00000000 00000000 00000000 01000001 | A |
 
 *See [Unicode Table for A](https://unicode-table.com/en/0041/)*
 
 **Note**: Unicode codepoints are represented via a `U+` and the hexidecimal value. Using a function like `.ord` will convert that codepoint to a decimal.
+
+As you can see there is a difference between the three Unicode formats. As mentioned above, UTF-8 is a variable width encoding. Where the width is between one to four 8 bit bytes. UTF-16 is also a variable length encoding but the width is one or two 16 bit bytes. And UTF 32 is a fixed width encoding that uses exactly 32 bits (four bytes). While UTF-8 might be the most popular, you might want to use UTF-16 if you wanted a balance between efficient access to characters with economical use of storage. Or UTF-32 if space wasn't a concern and you wanted faster access.
 
 At this point, we know what character encodings are. We know that ASCII and Unicode are both types of character encoding. And that Unicode was introduced to extend ASCII so that we can represent all languages. We also know that an ASCII character can also be represented as a Unicode character, interchangeably. The ASCII bit representation is the basically the same as the Unicode bit representation. But what about the flip side to this statement? What if we want to represent Unicode characters as ASCII characters?
 
