@@ -55,9 +55,11 @@ At this point, we know what character encodings are. We know that ASCII and Unic
 When building with Rails, there's a handy method that's found on the localization (`I18n`) library - `.transliterate`. Transliteration means to swap characters with something that looks similar. Not taking into account how the character sounds. For example, transliterating `é` will give `e`. Why would you do this? You might have a blog post with special unicode characters, but a URL isn't able to handle it. So we need to transform those characters to the ASCII approximation. When running `transliterate` using the whitespace example given in the beginning we have a problem.
 
 ```ruby
+# ASCII Space
 I18n.transliterate("hëllo wōrld")
 # => "hello world"
 
+# Hard to tell but this line is a non breaking space!
 I18n.transliterate("hëllo wōrld")
 # => "hello?world"
 ```
@@ -65,9 +67,11 @@ I18n.transliterate("hëllo wōrld")
 The transliterate method doesn't know what to do with the unicode whitespace, which is a non breaking space (nbsp). Because it can't handle it, it will replace the nbsp with a question mark. Not something that we want. To solve this one use case, we can use regex. Unfortunately, in Ruby, the whitespace meta-character doesn't recognize non-ASCII characters (source)  We can't use the regex meta-characters because they don't encompass non-ASCII characters.
 
 ```ruby
+# Unicode non breaking space
 /\s/.match("hello world")
 # => nil
 
+# ASCII Space
 /\s/.match("hello world")
 # => #<MatchData " ">
 ```
@@ -75,10 +79,11 @@ The transliterate method doesn't know what to do with the unicode whitespace, wh
 Thankfully, we can use the POSIX bracket expressions to solve this issue:
 
 ```ruby
-# Hard to tell but the first line is a non breaking space!
+# Unicode non breaking space
 /[[:space:]]/.match("hello world")
 # => #<MatchData " ">
 
+# ASCII Space
 /[[:space:]]/.match("hello world")
 # => #<MatchData " ">
 ```
