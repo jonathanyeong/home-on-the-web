@@ -45,27 +45,13 @@
 	export let fuse;
 	import PostCard from '$lib/PostCard.svelte';
 	import TagGroup from '$lib/TagGroup.svelte';
-	import SearchBar from '$lib/SearchFilter/SearchBar.svelte';
+	import SearchWithFilters from '$lib/SearchFilter/SearchWithFilters.svelte';
 
 	let activeTags = tags;
-	let tagToggle = false;
 	let query = "";
 	let results = []
 	let formattedResults = chronologicallySorted(posts);
 	let activeTagPosts = []
-
-  $: if (query !== "") {
-		results = fuse.search(query).map(r => r.item);
-		formattedResults = results
-  }
-
-	$: if (query === "" && !tagToggle) {
-		formattedResults = chronologicallySorted(posts);
-	}
-
-	$: if (query === "" && tagToggle) {
-		formattedResults = chronologicallySorted(activeTagPosts);
-	}
 
 	function handleTagUpdate(event) {
 		if (event.detail.activeTags.length === 0) {
@@ -104,7 +90,7 @@
 <svelte:window on:keydown={handleKeydown}/>
 
 <h1 class="title">Digital Garden</h1>
-<SearchBar bind:query={query} />
+<SearchWithFilters bind:formattedResults={formattedResults} {posts} />
 <TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
 
 <div class="garden-posts">

@@ -1,28 +1,40 @@
 <script>
-	import Filters from '$lib/SearchFilter/Filters.svelte';
 	import SearchBar from '$lib/SearchFilter/SearchBar.svelte';
+	import Fuse from 'fuse.js';
+	export let posts = [];
+	export let formattedResults = [];
+	let results = []
+	const options = {
+		keys: [
+			{
+				name: "title",
+				weight: 0.3
+			},
+			{
+				name:  "tags",
+				weight: 0.7
+			}]
+	};
 
-	export let fuse;
-	export let filters;
+	const postsIndex = Fuse.createIndex(options.keys, posts);
+	const fuse = new Fuse(posts, options, postsIndex);
 
-	function handleTagUpdate(event) {
-		if (event.detail.activeTags.length === 0) {
-			tagToggle = false;
-			activeTags = tags;
-			fuse.setCollection(posts);
-		} else {
-			tagToggle = true;
-			activeTags = event.detail.activeTags;
-			activeTagPosts = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
-			fuse.setCollection(activeTagPosts);
-		}
+	let query = "";
 
-		if (query !== "") {
-			results = fuse.search(query).map(r => r.item);
-			formattedResults = results
-		}
-	}
+  $: if (query !== "") {
+		results = fuse.search(query).map(r => r.item);
+		formattedResults = results
+  }
+
+	// $: if (query === "" && !tagToggle) {
+	// 	formattedResults = chronologicallySorted(posts);
+	// }
+
+	// $: if (query === "" && tagToggle) {
+	// 	formattedResults = chronologicallySorted(activeTagPosts);
+	// }
+
 </script>
 
-<SearchBar />
-<Filters {filters} on:tagUpdate={handleTagUpdate}/>
+<SearchBar bind:query={query} />
+
