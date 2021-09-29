@@ -5,7 +5,6 @@
 
 	export let posts = [];
 	export let formattedResults = [];
-	let results = []
 	const options = {
 		keys: [
 			{
@@ -24,15 +23,19 @@
 	let query = "";
 	let tagToggle = false;
 
+	// If query changes and it's not empty call fuse to return search results
   $: if (query !== "") {
-		results = fuse.search(query).map(r => r.item);
-		formattedResults = results
+		formattedResults = fuse.search(query).map(r => r.item);
   }
 
+	// If query changes and it's empty and there's no tags - then just return all posts
+	// Also the initial state
 	$: if (query === "" && !tagToggle) {
 		formattedResults = chronologicallySorted(posts);
 	}
 
+	// If query changes and it's empty but there's a tag selected. Only show the posts
+	// Related to that tag (activeTagPosts)
 	$: if (query === "" && tagToggle) {
 		formattedResults = chronologicallySorted(activeTagPosts);
 	}
