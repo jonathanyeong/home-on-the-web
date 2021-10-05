@@ -90,8 +90,8 @@
 <svelte:window on:keydown={handleKeydown}/>
 
 <h1 class="title">Digital Garden</h1>
-<SearchWithFilters bind:formattedResults={formattedResults} {posts} />
-<TagGroup {tags} on:tagUpdate={handleTagUpdate}/>
+<SearchWithFilters bind:formattedResults={formattedResults} {posts} filters={tags}/>
+<!-- <TagGroup {tags} on:tagUpdate={handleTagUpdate}/> -->
 
 <div class="garden-posts">
 	{#each formattedResults as post}

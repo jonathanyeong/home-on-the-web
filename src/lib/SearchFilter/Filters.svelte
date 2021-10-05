@@ -1,30 +1,23 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-  export let filters;
+  export let filters = [];
+  export let selectedFilters = [];
 
-	const dispatch = createEventDispatcher();
-  let activeTags = []
-  let handleSelect = [];
-
-  function toggleTagToFilter(tag, index) {
-    const posOfTag = activeTags.indexOf(tag);
-    if (posOfTag >= 0) {
-      activeTags.splice(posOfTag, 1)
-      handleSelect[index] = false
+  let toggleFilterClass = []
+  function toggleTagToFilter(filter, index) {
+    const posOfFilter = selectedFilters.indexOf(filter);
+    if (posOfFilter >= 0) {
+      selectedFilters.splice(posOfFilter, 1)
+      toggleFilterClass[index] = false
     } else {
-      activeTags = [...activeTags, tag]
-      handleSelect[index] = true
+      selectedFilters = [...selectedFilters, filter]
+      toggleFilterClass[index] = true
     }
-
-    dispatch('tagUpdate', {
-      activeTags: activeTags
-    });
   }
 </script>
 
 <ul>
-	{#each filters as tag, index}
-		<li><button class:selected="{handleSelect[index]}"  on:click|preventDefault={() => toggleTagToFilter(tag, index)}>{tag}</button></li>
+	{#each filters as filter, index}
+		<li><button class:selected="{toggleFilterClass[index]}"  on:click|preventDefault={() => toggleTagToFilter(filter, index)}>{filter}</button></li>
 	{/each}
 </ul>
 
