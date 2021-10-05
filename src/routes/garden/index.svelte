@@ -29,6 +29,8 @@
 	export let tags;
 	import PostCard from '$lib/PostCard.svelte';
 	import SearchWithFilters from '$lib/SearchFilter/SearchWithFilters.svelte';
+	import { chronologicallySorted } from '$lib/chronologicalSort';
+
 
 	let formattedResults = chronologicallySorted(posts);
 
@@ -37,14 +39,6 @@
 			event.preventDefault();
 			document.getElementById("postSearch").focus();
 		}
-	}
-
-	function chronologicallySorted(p) {
-		return [...p].sort((a,b) => {
-			const aDate = new Date(a.lastUpdatedDate)
-			const bDate = new Date(b.lastUpdatedDate)
-			return (aDate > bDate) ? -1 : 1
-		})
 	}
 </script>
 
