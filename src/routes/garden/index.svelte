@@ -1,5 +1,4 @@
 <script context="module">
-	import Fuse from 'fuse.js'
   export const prerender = true;
 	import metatags from '$lib/stores/metatags';
 	const description = "My digital garden where I have thoughts in various stages of done-ness. Technical articles are focused around Ruby, Elixir, Javascript, and their respective ecosystems."
@@ -13,24 +12,10 @@
 
 		if (res.ok) {
 			const { posts, tags } = await res.json();
-			let options = {
-				keys: [
-					{
-						name: "title",
-						weight: 0.3
-					},
-					{
-						name:  "tags",
-						weight: 0.7
-					}]
-			};
-			const postsIndex = Fuse.createIndex(options.keys, posts)
-			const fuse = new Fuse(posts, options, postsIndex);
 			return {
 				props: {
 					posts,
-					tags,
-					fuse
+					tags
 				}
 			};
 		}
@@ -42,34 +27,10 @@
 <script>
 	export let posts;
 	export let tags;
-	export let fuse;
 	import PostCard from '$lib/PostCard.svelte';
-	import TagGroup from '$lib/TagGroup.svelte';
 	import SearchWithFilters from '$lib/SearchFilter/SearchWithFilters.svelte';
 
-	let activeTags = tags;
-	let query = "";
-	let results = []
 	let formattedResults = chronologicallySorted(posts);
-	let activeTagPosts = []
-
-	function handleTagUpdate(event) {
-		if (event.detail.activeTags.length === 0) {
-			tagToggle = false;
-			activeTags = tags;
-			fuse.setCollection(posts);
-		} else {
-			tagToggle = true;
-			activeTags = event.detail.activeTags;
-			activeTagPosts = posts.filter(post => post.tags.some(t => activeTags.indexOf(t) >= 0));
-			fuse.setCollection(activeTagPosts);
-		}
-
-		if (query !== "") {
-			results = fuse.search(query).map(r => r.item);
-			formattedResults = results
-		}
-	}
 
 	function handleKeydown(event) {
 		if (event.keyCode === 220) {
@@ -91,7 +52,6 @@
 
 <h1 class="title">Digital Garden</h1>
 <SearchWithFilters bind:formattedResults={formattedResults} {posts} filters={tags}/>
-<!-- <TagGroup {tags} on:tagUpdate={handleTagUpdate}/> -->
 
 <div class="garden-posts">
 	{#each formattedResults as post}
