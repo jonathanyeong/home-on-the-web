@@ -1,5 +1,5 @@
 <script context="module">
-  import plants from './_plants';
+  import posts from './_posts';
   export const prerender = true;
   import metatags from '$lib/stores/metatags';
 
@@ -8,7 +8,7 @@
   */
   export async function load({ page, fetch, session, context }) {
     const { slug } = page.params
-    const allPlants = await plants();
+    const allPlants = await posts();
     const post = allPlants[slug]
 
     if (post) {

@@ -22,12 +22,12 @@ const renderXmlRssFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 </channel>
 </rss>`;
 
-import plants from './garden/_plants'
+import posts from './garden/_posts';
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
 export async function get() {
-  const allPlants = await plants();
+  const allPlants = await posts();
   const feed = renderXmlRssFeed(Object.values(allPlants));
 
 
