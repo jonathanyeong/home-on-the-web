@@ -1,4 +1,4 @@
-const plantData =
+const postData =
         Promise.all(Object.entries(import.meta.glob('/src/content/garden/*.md')).map(
             async ([path, page]) => {
                 const { default: Rendered, metadata } = await page();
@@ -9,11 +9,13 @@ const plantData =
 
 const slugRegex = /^([a-z-0-9]+)(?:\.md)$/;
 
-export default async function plants() {
-  let plants = await plantData;
+export default async function posts() {
+  let posts = await postData;
+
+  posts = posts.filter((post) => post.published || Date.parse(post.publishedAt) <= Date.now())
   // We key off slug so we can efficiently access it in [slug].svelte
   const slugs = Object.fromEntries(
-    plants.map((plant) => [plant.filename.match(slugRegex)[1], {...plant, slug: plant.filename.match(slugRegex)[1]}])
+    posts.map((post) => [post.filename.match(slugRegex)[1], {...post, slug: post.filename.match(slugRegex)[1]}])
   );
   return slugs
 }
