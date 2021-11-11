@@ -1,104 +1,104 @@
- nav {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin-top: 8px;
-   margin-bottom: 24px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 24px;
 
-   @media (min-width: 768px) {
-     margin-bottom: 48px;
-   }
- }
+  @media (min-width: 768px) {
+    margin-bottom: 48px;
+  }
+}
 
- .theme-changer {
-   cursor: pointer;
-   border: none;
-   background: none;
-   margin-right: -8px;
+.theme-changer {
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-right: -8px;
 
-   :global(.theme-icon) {
-     fill: var(--body-text-color);
-     transition: fill 0.1s ease-in-out;
-   }
+  .theme-icon {
+    fill: var(--body-text-color);
+    transition: fill 0.1s ease-in-out;
+  }
 
-   &:hover :global(.theme-icon) {
-     fill: var(--theme-hover-color);
-     transition: fill 0.1s ease-in-out;
-   }
- }
+  &:hover .theme-icon {
+    fill: var(--theme-hover-color);
+    transition: fill 0.1s ease-in-out;
+  }
+}
 
- .nav-links {
-   display: flex;
-   align-items: center;
-   gap: 16px;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
-   @media (min-width: 768px) {
-     gap: 24px;
-   }
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
 
-   a {
-     color: var(--body-text-color);
-     font-family: var(--font-family-medium);
-     display: inline-block;
-     text-decoration: none;
-     position: relative;
+  a {
+    color: var(--body-text-color);
+    font-family: var(--font-family-medium);
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
 
-     &:before {
-       content: '';
-       background: var(--secondary-400);
-       width: 100%;
-       height: 2px;
-       position: absolute;
-       bottom: -4px;
-       opacity: 0;
-       transition: opacity 0.1s ease-in-out;
-     }
+    &:before {
+      content: '';
+      background: var(--secondary-400);
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: -4px;
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+    }
 
-     &:hover::before {
-       opacity: 1;
-     }
-   }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
 
-   .active {
-     font-family: var(--font-family-heavy);
-     position: relative;
+  .active {
+    font-family: var(--font-family-heavy);
+    position: relative;
 
-     &:before {
-       content: '';
-       background: var(--secondary-400);
-       width: 100%;
-       height: 2px;
-       position: absolute;
-       bottom: -4px;
-       opacity: 1;
-     }
-   }
- }
+    &:before {
+      content: '';
+      background: var(--secondary-400);
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: -4px;
+      opacity: 1;
+    }
+  }
+}
 
- // Inspired by: https://github.com/elrumordelaluz/csshake/blob/master/scss/_tools.scss
- $chunk: 100%;
- $r: 40deg;
+// Inspired by: https://github.com/elrumordelaluz/csshake/blob/master/scss/_tools.scss
+$chunk: 100%;
+$r: 40deg;
 
- @function apply-random() {
-   @return (random($r) - $r/2);
- }
+@function apply-random() {
+  @return (random($r) - $r/2);
+}
 
- @keyframes rattle {
-   $interval: 20;
-   $step: $interval * 1%;
+@keyframes rattle {
+  $interval: 20;
+  $step: $interval * 1%;
 
-   @while $step < $chunk {
-     $rotate: apply-random();
+  @while $step < $chunk {
+    $rotate: apply-random();
 
-     #{$step} {
-       transform-origin: center;
-       transform: rotate($rotate);
-     }
+    #{$step} {
+      transform-origin: center;
+      transform: rotate($rotate);
+    }
 
-     $step: $step+$interval;
-   }
- }
+    $step: $step + $interval;
+  }
+}
 
- .logo-link:hover {
-   animation: rattle 400ms ease-in-out 1;
- }
+.logo-link:hover {
+  animation: rattle 400ms ease-in-out 1;
+}
