@@ -11,7 +11,41 @@ tags:
 featuredPost: true
 ---
 
-TL;DR - I'm using SvelteKit, MdSvex, and SCSS. It's deployed on netlify using the netlify-adapter. You can find my site here.
+# How my site was built
+TL;DR - I'm using SvelteKit, MdSvex, and SCSS. It's deployed on netlify using the netlify-adapter. It's open sourced, you can find it here.
+
+Have you ever had this conversation with yourself?
+
+Woah, I just learnt something super cool and I need to write a blog post about it!
+...
+But jeez, my site is kinda ugly. And I wish I had a feature to add tags, or search. Oh and I heard of this new framework GyroJS, where the pita encapsulates all your components into a tasty treat [^1]. I have to get on it!
+
+Next thing you know, you're knee deep in rebuilding your website and months go by without having written a blog post.
+
+Well, that was me 6ish months ago. But now after all this time, I want to do a recap on the entire build process. I also want to give a shoutout to my friend Jen, who inspired me with her own article about how she built her site.
+
+## Technology
+Let's first touch on technology. While I do my fair share of shiny thing following [^2], I also think the importance of technology can be overinflated. Use any framework or language that you enjoy using or fits your use case. I'll do my best about presenting the reasoning behind my technology choices.
+
+This site is built with SvelteKit and Svelte.
+
+Why? Honestly, it was a shiny thing. But also I had heard of some great developer experiences building with Svelte. And when SvelteKit was announced in beta, I wanted to see it for myself.
+
+What did I like? The stories of developer experience with Svelte is no joke. I found building with Svelte a joy. With SvelteKit's build process as well, developing my site was extremely fast. And relatively forgiving [^3] for a newbie Svelte developer.
+
+What didn't I like? The documentation was rough, and because it was so new there wasn't a lot of resources or plugins out there to do the things I wanted. I'll touch on these things later. But the Svelte discord was my go to place for questions.
+
+Within SvelteKit, I'm using MDSvex to process my markdown files and plain CSS to style everything. MdSvex is the svelte equivalent of Mdx
+
+Why? I wanted the option to add components to my markdown file. This would give greater flexibility and interactivity with my blog posts. And I used plain CSS because writing CSS in Svelte is (generally) painfree. Scoped styles is a default in Svelte so I could style a component faster than trying to learn Tailwind.
+
+What did I like? There's a bunch of plugins you can add to Mdsvex to add more to your markdown processing. It hooks into the rehype and remark plugin library. An example, is auto-generating your table of contents.
+
+What didn't I like? I struggled for a very long time trying to figure out how to ingest my markdown files and run it through mdsvex.
+
+Finally, my site is hosted on Netlify. I've had no problems with Netlify, and there are SvelteKit adapters for it and also other hosting sites. And that's it. There's not much more to this site. The search and tagging functionality was hand rolled with Fuse.js to do the search. It works... but it's not great. Something to look into.
+
+## Process
 
 The process from inception of a new site to production was pretty long. Here's the timeline:
 
@@ -44,3 +78,8 @@ The build was done on a new netlify project. When it came to cutover to the new 
 
 What's next? Well I should probably write content for this blog. But I have improvements lined up. You can see the github project board to see what's on the roadmap.
 
+---
+
+[^1] This framework doesn't exist, but if it did and I used it... I'd be constantly hungry.
+[^2] There has to be a better name.
+[^3] Forgiving might also mean my Svelte code is not *good* Svelte code. If it's not, please let me know!
