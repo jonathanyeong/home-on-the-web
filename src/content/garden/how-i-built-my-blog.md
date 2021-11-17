@@ -1,8 +1,8 @@
 ---
 createdAtDate: 2021-11-09T00:00:00.000-08:00
 lastUpdatedDate: 2021-11-09T00:00:00.000-08:00
-title: How I built my site
-seoTitle: How I built my digital garden
+title: How I built my blog
+seoTitle: How I built my blog
 published: true
 description: A walkthrough of how this site is built! From the inception to switching it on in production
 tags:
@@ -10,7 +10,6 @@ tags:
 featuredPost: true
 ---
 
-# How my site was built
 What will you learn:
 - What technology can be used to build a blog
 - The process I have when building a site
