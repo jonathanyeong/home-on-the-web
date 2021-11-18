@@ -54,10 +54,10 @@
 	let formattedResults = chronologicallySorted(posts);
 	let activeTagPosts = []
 
-  $: if (query !== "") {
+	$: if (query !== "") {
 		results = fuse.search(query).map(r => r.item);
 		formattedResults = results
-  }
+	}
 
 	$: if (query === "" && !tagToggle) {
 		formattedResults = chronologicallySorted(posts);
