@@ -1,6 +1,6 @@
 ---
-createdAtDate: 2021-06-05T00:00:00.000-08:00
-lastUpdatedDate: 2021-06-05T00:00:00.000-08:00
+createdAtDate: 2021-11-30T00:00:00.000-08:00
+lastUpdatedDate: 2021-11-30T00:00:00.000-08:00
 title: Advice through the Years
 seoTitle: Advice through the Years
 description: A list of advice that I've gotten throughout my career as a developer.
